@@ -1,0 +1,23 @@
+{
+  "name": "af-student-info-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manoj997/af-student-info-system.git"
+  },
+  "author": "Manoj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manoj997/af-student-info-system/issues"
+  },
+  "homepage": "https://github.com/manoj997/af-student-info-system#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
