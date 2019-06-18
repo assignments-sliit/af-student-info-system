@@ -5,12 +5,13 @@ const app =express();
 const mongoose=require('mongoose');
 
 const courseRouter=require('./routes/Course/courseRoutes');
-
+const bundler=new Bundler('./public/index.html',{});
 let db;
 
 app.use(express.json());
 app.use('/courses',courseRouter);
-
+app.use(bundler.middleware());
+app.use(express.static('./dist'));
 //db connection
 mongoose.connect("mongodb+srv://polroti:polroti123@sis-cluster-to2kk.azure.mongodb.net/student-info-system",{
     useNewUrlParser:true
@@ -25,7 +26,8 @@ mongoose.connect("mongodb+srv://polroti:polroti123@sis-cluster-to2kk.azure.mongo
 
 
 app.get('/', function(req,res){
-    res.send('<h1>Hello Manoj Kumar!</h1> '+db);
+    // res.send('<h1>Hello Manoj Kumar!</h1> '+db);
+    res.sendFile('./dist/index.html');
 });
 
 app.listen(port,()=>{
