@@ -8,9 +8,8 @@ const courseRouter=require('./routes/Course/courseRoutes');
 
 let db;
 
-app.use(express);
+app.use(express.json());
 app.use('/courses',courseRouter);
-
 
 //db connection
 mongoose.connect("mongodb+srv://polroti:polroti123@sis-cluster-to2kk.azure.mongodb.net/student-info-system",{
@@ -26,7 +25,7 @@ mongoose.connect("mongodb+srv://polroti:polroti123@sis-cluster-to2kk.azure.mongo
 
 
 app.get('/', function(req,res){
-    res.send('<h1>Hello Manoj Kumar!</h1>' + 'DB:' +db);
+    res.send('<h1>Hello Manoj Kumar!</h1> '+db);
 });
 
 app.listen(port,()=>{
