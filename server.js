@@ -5,13 +5,16 @@ const app =express();
 const mongoose=require('mongoose');
 
 const courseRouter=require('./routes/Course/courseRoutes');
+const studentRouter=require('./routes/Student/StudentRoute');
 const bundler=new Bundler('./public/index.html',{});
 let db;
 
 app.use(express.json());
 app.use('/courses',courseRouter);
+app.use('/students',studentRouter);
 app.use(bundler.middleware());
 app.use(express.static('./dist'));
+
 //db connection
 mongoose.connect("mongodb+srv://polroti:polroti123@sis-cluster-to2kk.azure.mongodb.net/student-info-system",{
     useNewUrlParser:true
