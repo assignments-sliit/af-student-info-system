@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/manoj997/af-student-info-system#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.0",
+    "parcel-bundler": "^1.12.3"
   }
 }
