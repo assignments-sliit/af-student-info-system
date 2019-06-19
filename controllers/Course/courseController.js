@@ -61,7 +61,7 @@ Course.find({
 
 exports.findCourseByCode=(req,res,next)=>{
   Course.find({
-      courseCode:req.body.courseCode
+      courseCode:req.params.courseCode
   }).exec().then(result=>{
       if(result){
           res.status(200).json({
