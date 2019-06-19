@@ -4,16 +4,16 @@ const CourseSchema=mongoose.Schema({
    _id:mongoose.Schema.Types.ObjectId,
    courseCode:{
        type:String,
-       required:true
+       required:true,
+       unique:true
    },
    courseName:{
        type:String,
        required:true
    },
-   modules:[{
-       type:mongoose.Schema.Types.ObjectId,
-       ref:'Module'
-   }]
+    courseType:{
+       type:String
+    }
 });
 
 module.exports=mongoose.model('Course',CourseSchema);

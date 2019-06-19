@@ -38,7 +38,7 @@ Course.find({
                 _id:mongoose.Types.ObjectId(),
                 courseCode:req.body.courseCode,
                 courseName: req.body.courseName,
-                modules:req.body.modules
+                modules:JSON.stringify(req.body.modules)
             });
 
             course.save().then(result=>{

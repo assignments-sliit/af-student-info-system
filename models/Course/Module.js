@@ -6,7 +6,6 @@ const moduleSchema=mongoose.Schema({
         type:String,
         required:true,
         unique:true
-
     },
     moduleName:{
         type:String,
@@ -19,10 +18,10 @@ const moduleSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Lecturer'
     },
-    assignment:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Assignment'
-    }]
+    courseCode:{
+        type:String,
+        ref:'Course'
+    }
 });
 
 module.exports=mongoose.model('Module',moduleSchema);
