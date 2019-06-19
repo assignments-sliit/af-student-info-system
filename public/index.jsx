@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom' ;
+import Header from './Components/header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,4 +13,7 @@ const name='manoj kumar';
 const element=<h1>Hello {name}</h1>;
 
 
-    render(element,document.getElementById('app'));
+    render(<div>
+        <h1>{element}</h1> <br/>
+        <Header/>
+    </div>,document.getElementById('app'));
