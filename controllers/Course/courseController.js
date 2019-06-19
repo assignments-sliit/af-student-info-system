@@ -79,7 +79,7 @@ exports.findCourseByCode=(req,res,next)=>{
       });
   });
 };
-
+//test
 
 exports.deleteCourseByCode=(req,res,next)=>{
   const code=req.param.courseCode;
