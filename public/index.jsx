@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //render(<App/>,document.getElementById('app'));
 
-const name='manoj kumar';
+const name='manoj  3kumar';
 const element=<h1>Hello {name}</h1>;
 
 
