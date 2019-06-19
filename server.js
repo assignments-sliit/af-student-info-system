@@ -10,8 +10,8 @@ const bundler=new Bundler('./public/index.html',{});
 let db;
 
 app.use(express.json());
-app.use('/courses',courseRouter);
-app.use('/students',studentRouter);
+app.use('/api/courses',courseRouter);
+app.use('/api/students',studentRouter);
 app.use(bundler.middleware());
 app.use(express.static('./dist'));
 
