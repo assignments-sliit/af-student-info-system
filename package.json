@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/manoj997/af-student-info-system#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",

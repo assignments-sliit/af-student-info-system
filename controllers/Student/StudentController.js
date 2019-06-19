@@ -48,6 +48,7 @@ exports.students_signup = (req, res, next)=>{
     })
 };
 
+
 //GET - Specified Students
 exports.get_studentById=(req,res,next)=>{
     StudentModel.find({
@@ -95,4 +96,58 @@ exports.getAllStudents=(req,res,next)=>{
         });
     });
 };
+
+//DELETE - usingStudentID
+exports.delete_byStudentID = (req,res,next)=>{
+    const stuID = req.params.studentID;
+
+    StudentModel.remove({
+        studentID:stuID
+    }).exec().then(result=>{
+        res.status(200).json({
+            message: 'Successfully deleted!!',
+            deletedStuRecord: result
+        });
+    }).catch(err=>{
+        console.log(err.message);
+
+        res.status(500).json({
+            error:err
+        });
+    })
+};
+
+//UPDATE - usingStudentID
+/*exports.update_byStudentID = (req,res,next)=> {
+    const stuID = req.params.studentID;
+    const updateOps={};
+
+    for(const ops of req.body){
+        updateOperation[ops.propName]=ops.value;
+    }
+
+    StudentModel.update({studentID:stuID},{$set:updateOperation})
+        .exec()
+        .then(result=>{
+            res.status(200).json({
+                message:'Successfully updated Student Record!!',
+
+                updatedStuRecord: result,
+
+                request:{
+                    type:'GET',
+                    url:'http://localhost:5000/api/students/' + stuID
+                }
+            });
+    }).catch(err=>{
+        console.log(err);
+
+        res.status(500).json({
+            error:err,
+            message:"Not Successful"
+        });
+    });
+};*/
+
+
 
