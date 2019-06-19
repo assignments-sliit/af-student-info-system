@@ -36,7 +36,7 @@ Course.find({
     courseCode: req.body.courseCode
 }).exec()
     .then(course =>{
-        if(user.length>=1){
+        if(course.length>=1){
             res.status(409).json({
                 message:'Course already exists'
             });
