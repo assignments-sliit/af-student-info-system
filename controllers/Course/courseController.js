@@ -61,15 +61,16 @@ Course.find({
 
 exports.findCourseByCode=(req,res,next)=>{
   Course.find({
-      courseCode:req.params.courseCode
+      courseCode:req.params.code
   }).exec().then(result=>{
-      if(result){
+      if(result.length>=1){
           res.status(200).json({
               course:result
           });
+
       }else{
           res.status(404).json({
-              message:'No Course was found on that Code'
+              message:'Nothing was found here!'
           });
       }
   }).catch(err=>{
