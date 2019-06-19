@@ -4,7 +4,7 @@ const mongoose=require('mongoose');
 exports.getAllCourses=(req,res,next)=>{
     Course.find()
         .select('courseCode courseName')
-        .populate('modules','moduleCode moduleName lecturerInCharge')
+        // .populate('modules','moduleCode moduleName lecturerInCharge')
         .exec()
         .then(docs=>{
             res.status(200).json({
@@ -12,14 +12,7 @@ exports.getAllCourses=(req,res,next)=>{
                 courses:docs.map(doc=>{
                     return{
                         courseCode:doc.courseCode,
-                        courseName:doc.courseName,
-                        modules:doc.modules.map(mdoc=>{
-                            return{
-                                moduleCode:mdoc.moduleCode,
-                                moduleName:mdoc.moduleName,
-                                lecturerInCharge:mdoc.lecturerInCharge
-                            }
-                        })
+                        courseName:doc.courseName
                     }
                 })
             })
