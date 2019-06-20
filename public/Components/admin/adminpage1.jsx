@@ -7,7 +7,7 @@ import Course from '../../../image/course.jpg';
 import Admin from '../../../image/admin.jpg';
 import Adminstudent from'./students_admin';
 import Admin_course from './course_admin';
-import AAdmin from'../AddStudent';
+import AAdmin from'./add_Admin';
 
 
 export default class adminpage1 extends Component{
