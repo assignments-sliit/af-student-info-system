@@ -87,6 +87,7 @@ exports.getAllStudents=(req,res,next)=>{
                         studentID:doc.studentID,
                         name:doc.name,
                         email:doc.email
+
                     }
                 })
             })
