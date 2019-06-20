@@ -8,6 +8,7 @@ import Admin from '../../../image/admin.jpg';
 import Adminstudent from'./students_admin';
 import Admin_course from './course_admin';
 import AAdmin from'./admins';
+import Add_Instructor from '../instructor/AddInstructor';
 
 
 export default class adminpage1 extends Component{
@@ -43,7 +44,7 @@ export default class adminpage1 extends Component{
                       <div className="card">
                           <img src={Lecture} className="card-img-top" alt="..."/>
                               <div className="card-body" align="center">
-                                  <button type="button" className="btn btn-primary">Instructors</button>
+                                  <Link to="/instructor"  className="btn btn-primary">Instructors</Link>
                               </div>
                       </div>
                   </div> <br/><br/>
@@ -69,6 +70,7 @@ export default class adminpage1 extends Component{
               <Route path="/std" component={Adminstudent}/>
               <Route path="/course" component={Admin_course}/>
               <Route path="/admin" component={AAdmin}/>
+              <Route path="/instructor" component={Add_Instructor}/>
               </Router>
 
           </div>

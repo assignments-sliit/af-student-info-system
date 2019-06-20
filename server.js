@@ -8,6 +8,8 @@ const courseRouter=require('./routes/Course/courseRoutes');
 const studentRouter=require('./routes/Student/StudentRoute');
 const moduleRouter=require('./routes/Course/moduleRoutes');
 const adminRouter=require('./routes/Admin/AdminRoute');
+const instructorRouter=require('./routes/Instructor/InstructorRoute');
+const examRouter=require('./routes/Instructor/ExamRoute');
 const bundler=new Bundler('./public/index.html',{});
 let db;
 
@@ -16,6 +18,8 @@ app.use('/api/courses',courseRouter);
 app.use('/api/students',studentRouter);
 app.use('/api/modules',moduleRouter);
 app.use('/api/admins',adminRouter);
+app.use('/api/instructors',instructorRouter);
+app.use('/api/exams',examRouter);
 
 app.use(bundler.middleware());
 app.use(express.static('./dist'));
