@@ -9,8 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //render(<App/>,document.getElementById('app'));
 
-const name='manoj  3kumar';
-const element=<h1>Hello {name}</h1>;
+const name='Students Information Systems';
+const element=<h1 align="center">{name}</h1>;
 
 
     render(<div>

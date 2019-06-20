@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import axios from'axios';
 
 
 export default class add_Admin extends Component{
@@ -6,22 +7,83 @@ export default class add_Admin extends Component{
         super(props);
 
         this.state={
-
+           adminID:'',
+            name:'',
+            email:'',
+            password:''
         }
+
+        this.onSubmit=this.onSubmit.bind(this);
+        this.onChangeID=this.onChangeID.bind(this);
+        this.onChangeName=this.onChangeName.bind(this);
+        this.onChangeEmail=this.onChangeEmail.bind(this);
+        this.onChangePassword=this.onChangePassword.bind(this);
+
+
     }
+    onChangeID(e){
+        this.setState({
+            adminID:e.target.value,
+        });
+    }
+
+    onChangeName(e){
+        this.setState({
+            name:e.target.value,
+        });
+    }
+
+    onChangeEmail(e){
+        this.setState({
+            email:e.target.value,
+        });
+    }
+    onChangePassword(e){
+        this.setState({
+            password:e.target.value,
+        });
+    }
+
+    onSubmit(e){
+        e.preventDefault();
+
+        const new_admin={
+            adminID:this.state.adminID,
+            name:this.state.name,
+            email:this.state.email,
+            password:this.state.password
+        }
+
+        axios.post('/api/admins/add',new_admin)
+            .then(res => console.log(res.data))
+            .catch(err => this.setState({ errors: err.response.data}));
+
+
+        this.setState({
+            adminID:'',
+            name:'',
+            email:'',
+            password:''
+        })
+
+    }
+
+
+
+
 
     render() {
         return(
           <div>
-              <h2>ADD Admin</h2> <br/>
+              <h2 align="center">ADD Admin</h2> <br/>
               <form onSubmit={this.onSubmit}>
                   <div className="row">
                       <div className="col-md-6">
                           <input type="text"
                                  className="form-control"
-                                 placeholder="Student Id"
-                                 value={this.state.studentID}
-                                 onChange={this.onChangeStd}
+                                 placeholder="Admin Id"
+                                 value={this.state.adminID}
+                                 onChange={this.onChangeID}
                           />
                       </div>
                   </div><br/>
