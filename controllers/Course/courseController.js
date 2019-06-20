@@ -3,8 +3,8 @@ const mongoose=require('mongoose');
 
 exports.getAllCourses=(req,res,next)=>{
     Course.find()
-        .select('courseCode courseName')
-      //  .populate('modules','moduleCode moduleName lecturerInCharge')
+        .select('courseCode courseName module')
+        .populate('module','-_id moduleCode moduleName lecturerInCharge')
         .exec()
         .then(docs=>{
             res.status(200).json({
@@ -12,7 +12,9 @@ exports.getAllCourses=(req,res,next)=>{
                 courses:docs.map(doc=>{
                     return{
                         courseCode:doc.courseCode,
-                        courseName:doc.courseName
+                        courseName:doc.courseName,
+                        courseType:doc.courseType,
+                        module:doc.module
                     }
                 })
             })
@@ -38,7 +40,8 @@ Course.find({
                 _id:mongoose.Types.ObjectId(),
                 courseCode:req.body.courseCode,
                 courseName: req.body.courseName,
-                modules:JSON.stringify(req.body.modules)
+                courseType:req.body.courseType,
+                module:req.body.module
             });
 
             course.save().then(result=>{

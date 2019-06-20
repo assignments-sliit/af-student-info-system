@@ -6,12 +6,14 @@ const mongoose=require('mongoose');
 
 const courseRouter=require('./routes/Course/courseRoutes');
 const studentRouter=require('./routes/Student/StudentRoute');
+const moduleRouter=require('./routes/Course/moduleRoutes');
 const bundler=new Bundler('./public/index.html',{});
 let db;
 
 app.use(express.json());
 app.use('/api/courses',courseRouter);
 app.use('/api/students',studentRouter);
+app.use('/api/modules',moduleRouter);
 app.use(bundler.middleware());
 app.use(express.static('./dist'));
 

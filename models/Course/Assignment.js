@@ -6,8 +6,8 @@ const assignmentSchema=mongoose.Schema({
         type:String,
         required:true
     },
-    moduleCode:{
-        type:String,
+    module:{
+        type:mongoose.Schema.Types.ObjectId,
         ref:'Module'
     },
     dueDate:{

@@ -13,7 +13,13 @@ const CourseSchema=mongoose.Schema({
    },
     courseType:{
        type:String
-    }
+    },
+    module:[
+       {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Module'
+       }
+    ]
 });
 
 module.exports=mongoose.model('Course',CourseSchema);

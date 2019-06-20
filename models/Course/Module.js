@@ -19,7 +19,7 @@ const moduleSchema=mongoose.Schema({
         ref:'Lecturer'
     },
     courseCode:{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'Course'
     }
 });
