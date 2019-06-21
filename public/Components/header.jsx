@@ -44,7 +44,7 @@ export default  class header extends Component{
                         </form>
                         <ul>
                             <li className="nav-item">
-                                <Link to="/login" className=" btn btn-primary"><b className="nav-link">Login</b></Link>
+                                <Link to="/login" className=" btn btn-outline-success my-2 my-sm-0"><b className="nav-link">Login</b></Link>
                             </li>
 
                         </ul>

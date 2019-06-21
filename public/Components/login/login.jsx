@@ -2,12 +2,13 @@ import React,{Component} from 'react';
 import {Link} from "react-router-dom";
 
 
+
 export default class login extends Component {
 
 
     render() {
         return (
-            <div>
+            <div >
                 <h1 align="center">Login</h1>
                 <form>
                     <div className="form-group row">

@@ -5,10 +5,6 @@ import Students from '../../../image/student.jpg';
 import Lecture from '../../../image/lectures.jpg';
 import Course from '../../../image/course.jpg';
 import Admin from '../../../image/admin.jpg';
-import Adminstudent from '../Student/ViewStudent';
-import Admin_course from './course_admin';
-import AAdmin from'./admins';
-import Add_Instructor from '../instructor/AddInstructor';
 
 
 export default class adminpage1 extends Component{
@@ -31,7 +27,7 @@ export default class adminpage1 extends Component{
         console.log(this.state);
         return(
           <div>
-              <Router>
+
               <div>
 
                   <div className="card-deck">
@@ -59,7 +55,7 @@ export default class adminpage1 extends Component{
                       <div className="card">
                           <img src={Admin} className="card-img-top" alt="..."/>
                           <div className="card-body" align="center">
-                              <Link to="/admin" className="btn btn-primary">Admins</Link>
+                              <Link to="/admin-01" className="btn btn-primary">Admins</Link>
                           </div>
 
                       </div>
@@ -67,11 +63,6 @@ export default class adminpage1 extends Component{
                   </div>
 
               </div><br/><br/>
-              <Route path="/std" component={Adminstudent}/>
-              <Route path="/course" component={Admin_course}/>
-              <Route path="/admin" component={AAdmin}/>
-              <Route path="/instructor" component={Add_Instructor}/>
-              </Router>
 
           </div>
         );

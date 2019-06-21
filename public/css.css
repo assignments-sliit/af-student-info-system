@@ -1,7 +1,18 @@
+body{
+    margin:15px;
+    padding:10px;
+}
 .login_head{
     float: right;
     margin-right:15px;
     margin-bottom:20px;
     margin-top:15px;
 
+}
+
+.headerBack{
+    background-image: url("../image/header1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
