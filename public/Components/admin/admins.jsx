@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import Add_Admin from './add_Admin';
-import View_Admin from './view_admins';
+import View_Admin from './view_admin';
 
 export default class admins extends Component{
 

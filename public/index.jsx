@@ -13,6 +13,8 @@ const name='Students Information Systems';
 const element=<h1 align="center">{name}</h1>;
 
 
+
+
     render(<div>
         <h1>{element}</h1> <br/>
         <Header/>

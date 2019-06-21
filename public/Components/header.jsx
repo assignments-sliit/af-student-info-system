@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import home from './admin/adminpage1';
 import course from './course/course';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
+import '../css.css'
 
 
 export default  class header extends Component{
@@ -10,8 +11,12 @@ export default  class header extends Component{
     render() {
         return(
             <div>
+                <div className="login_head">
+
+                </div><br/><br/><br/>
                 <Router>
                 <div>
+
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 
 
