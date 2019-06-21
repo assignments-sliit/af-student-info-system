@@ -1,44 +1,117 @@
 import React,{Component} from 'react';
+import ReactDOM from 'react-dom';
 import {Link} from "react-router-dom";
+const port=process.env.PORT||5000;
 
 
+class login extends Component {
 
-export default class login extends Component {
+    toggle=function(e){
+        const studentID=this.refs.studentID.value;
+        const password=this.refs.password.value;
 
+            if(studentID===''|| password===''){
+                alert('Email or password is empty');
+            }else{
+                var credentials={
+                    "studentID":studentID,
+                    "password":password
+                };
+
+                var count=false;
+
+                fetch('http://localhost:'+port+'/api/students/login' +credentials.studentID+'/'+credentials.password,{
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                }).then(response=>{
+                    return response.json();
+                }).then(data=>{
+                    const student = JSON.stringify(data);
+                    if(student!=='[]'){
+                        console.log(student);
+                        count=true;
+                        console.log(data);
+
+                        for(var user of data){
+                            var studentId=student.studentID;
+                            var userType=student.userType;
+                        }
+
+                        //after successful login, render a component below
+                        //ReactDOM.render(<App studentID={studentID} userType={userType}/>,document.getElementById('root'));
+
+                    }else {
+                        alert('Invalid name or password');
+                    }
+                }).catch(err=>{
+                    alert(err);
+                });
+                if(count===true){
+                    ReactDOM.render(<App/>,document.getElementById('root'));
+                }else{
+                    ReactDOM.render(<Login/>,document.getElementById('root'));
+                }
+            }
+    };
+
+    signup(){
+        ReactDOM.render(<Register/>,document.getElementById('root'))
+    }
 
     render() {
         return (
-            <div className="login_back" >
-                <h1 align="center"><b className="l_text">LOGIN</b></h1> <br/><br/>
-                <form>
-                    <div className="form-group row">
-                        <label htmlFor="inputEmail3" className="col-sm-2 col-form-label"><b className="l_text">Email</b></label>
-                        <div className="col-sm-6">
-                            <input type="email" className="form-control" id="inputEmail3" placeholder="Email"/>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <label htmlFor="inputPassword3" className="col-sm-2 col-form-label"><b className="l_text">Password</b></label>
-                        <div className="col-sm-6">
-                            <input type="password" className="form-control" id="inputPassword3" placeholder="Password"/>
-                        </div>
-                    </div>
+            <div className="container">
+                <div className="backimg">
+                    <div className="paddinglog">
+                        <div class="progress">
+                            <div class="progress-bar bar1" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
 
-                    <div className="form-group row">
-                        <div className="col-sm-10">
-                            <button type="submit" className="btn btn-primary">Sign in</button>
-                        </div>
-                    </div>
-                    <div className="from-group row">
-                        <div className="col-sm-6">
-                            <Link to="/addstd"><p>Student Register</p></Link>
-                        </div>
-                    </div>
-                </form>
+                            </div>
+                            <div class="progress-bar bg-success bar2"role="progressbar" aria-valuenow="30" aria-valuemin="0" ariavaluemax="100">
 
+                            </div>
+                            <div class="progress-bar bg-info bar3" role="progressbar" aria-valuenow="20" aria-valuemin="0" ariavaluemax="100">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-7">
+                            <form className="paddingsub">
+                                <fieldset>
+                                    <legend>Online Food Shopping</legend>
+                                    <div className="form-group">
+                                        <label
+                                            htmlFor="exampleInputEmail1">Email address</label>
+                                        <input className="form-control"
+                                               id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+                                               type="email" ref="email"/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label
+                                            htmlFor="exampleInputPassword1">Password</label>
+                                        <input className="form-control"
+                                               id="exampleInputPassword1" placeholder="Password" type="password"
+                                               ref="password"/>
+                                    </div>
+                                    <button type="submit" className="btn btnprimary" onClick={()=>this.toggle()}>Submit</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div className="col-md-5">
+                            <div className={"leftpaddingsignup"}>
+                                <button type="submit" className="btn btnprimary" onClick={()=>{this.signup()}}>Sign Up</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
             </div>
         );
 
     }
 }
+export default Login;

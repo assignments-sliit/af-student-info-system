@@ -1,7 +1,8 @@
+const StudentModel = require('../../models/Student/Student');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt=require('jsonwebtoken');
 
-const StudentModel = require('../../models/Student/Student');
 
 //POST
 exports.students_signup = (req, res, next)=>{
@@ -130,5 +131,47 @@ exports.delete_byStudentID = (req,res,next)=>{
 
 
 
+exports.student_signIn=(req,res,next)=>{
+    StudentModel.find({studentID:req.body.studentID})
+        .exec()
+        .then(student=>{
+            if(student.length<1){
+                return res.status(401).json({
+                    message:'Authorization Failed!'
+                });
+            }
+            bcrypt.compare(req.body.password,student[0].password,(err,result)=>{
+                if(err){
+                    return res.status(401).json({
+                        message:'Incorrect Password'
+                    });
+                }
+                if(result){
+                    //correct password
+                    const token=jwt.sign({
+                        id:student[0]._id,
+                        studentID:student[0].studentID,
+                        userType:student[0].userType
 
-
+                    },
+                        process.env.JWT_KEY,
+                        {
+                            expiresIn: "3h"
+                        }
+                    );
+                    return res.status(200).json({
+                        message:'Authorization Success',
+                        token:token
+                    });
+                }
+                res.status(401).json({
+                    message:'Authorization Failed!'
+                });
+            });
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json({
+                error:err
+        });
+    })
+};

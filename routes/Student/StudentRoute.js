@@ -18,5 +18,8 @@ route.delete('/delete-student/:studentID', StudentController.delete_byStudentID)
 //UPDATE
 //route.put('update-student/:studentID', StudentController.update_studentByID);
 
+//login
+route.post('/login',StudentController.student_signIn);
+
 module.exports = route;
 

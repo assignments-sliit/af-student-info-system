@@ -1,7 +1,8 @@
 const Module=require('../../models/Course/Module');
 const mongoose=require('mongoose');
+const checkAuth=require('../../auth/check-auth');
 
-exports.getAllModules=(req,res,next)=>{
+exports.getAllModules=checkAuth,(req,res,next)=>{
     Module.find()
         .select('moduleCode moduleName lecturerInCharge grade')
         .populate('assignment')
@@ -26,7 +27,7 @@ exports.getAllModules=(req,res,next)=>{
 };
 
 
-exports.addModule=(req,res,next)=>{
+exports.addModule=checkAuth,(req,res,next)=>{
     Module.find({
         moduleCode: req.body.moduleCode
     }).exec()
@@ -63,7 +64,7 @@ exports.addModule=(req,res,next)=>{
 };
 
 
-exports.findCourseByCode=(req,res,next)=>{
+exports.findCourseByCode=checkAuth,(req,res,next)=>{
     Module.find({
         courseCode:req.params.courseCode
     }).exec().then(result=>{
@@ -85,7 +86,7 @@ exports.findCourseByCode=(req,res,next)=>{
 };
 
 
-exports.deleteCourseByCode=(req,res,next)=>{
+exports.deleteCourseByCode=checkAuth,(req,res,next)=>{
     const code=req.param.courseCode;
     Module.remove({
         courseCode:code

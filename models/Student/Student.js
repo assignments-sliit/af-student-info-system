@@ -24,6 +24,10 @@ const studentSchema=new Schema({
     userType:{
         type:String,
         required:true
+    },
+    enrolledCourse:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Course"
     }
 
 });
