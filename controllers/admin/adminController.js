@@ -3,25 +3,12 @@ const mongoose=require('mongoose');
 
 
 exports.getAllAdmin=(req,res,next)=>{
-    Admin.find()
-        .select('adminID name email')
-        //  .populate('modules','moduleCode moduleName lecturerInCharge')
-        .exec()
-        .then(docs=>{
-            res.status(200).json({
-                count:docs.length,
-                admin:docs.map(doc=>{
-                    return{
-                        adminID:doc.adminID,
-                        name:doc.name,
-                        email:doc.email
-                    }
-                })
-            })
-        }).catch(err=>{
-        res.status(500).json({
-            error:err
-        });
+    Admin.find(function (err,id) {
+        if(err){
+            console.log(err);
+        }else{
+            res.json(id);
+        }
     });
 };
 
