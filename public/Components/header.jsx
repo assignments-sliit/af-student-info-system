@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import home from './admin/adminpage1';
 import exam from './instructor/AddExam';
-import addStd from './AddStudent';
+import addStd from './Student/AddStudent';
 
 import AAdmin from'./admin/admins';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import '../css.css'
-import Adminstudent from "./admin/students_admin";
+import Adminstudent from "./Student/ViewStudent";
 import Admin_course from "./admin/course_admin";
 import Add_Instructor from "./admin/instructor";
 import Login from"./login/login";
