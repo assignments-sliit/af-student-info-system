@@ -27,7 +27,7 @@ const studentSchema=new Schema({
     },
     enrolledCourse:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Course"
+        ref:'Course'
     }
 
 });

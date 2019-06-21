@@ -21,5 +21,8 @@ route.delete('/delete-student/:studentID', StudentController.delete_byStudentID)
 //login
 route.post('/login',StudentController.student_signIn);
 
+//student enroll
+route.put('/course/enroll/:enrolledCourse',StudentController.student_enroll);
+
 module.exports = route;
 

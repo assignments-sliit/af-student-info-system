@@ -2,7 +2,9 @@ const StudentModel = require('../../models/Student/Student');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt=require('jsonwebtoken');
-
+const checkAuth=require('../../auth/checkAuthStudent');
+const keys=require('../../config/keys');
+const JWT_KEY=keys.JWT_KEY;
 
 //POST
 exports.students_signup = (req, res, next)=>{
@@ -22,12 +24,15 @@ exports.students_signup = (req, res, next)=>{
                     });
                 }
                 else {
+                    const studentType="student";
                     const new_student = new StudentModel({
                         _id : mongoose.Types.ObjectId(),
                         studentID: req.body.studentID,
                         name: req.body.name,
                         email: req.body.email,
-                        password: hash
+                        password: hash,
+                        userType: studentType,
+                        enrolledCourse:req.body.enrolledCourse
                     });
 
                     new_student.save().then(result=>{
@@ -51,7 +56,7 @@ exports.students_signup = (req, res, next)=>{
 
 
 //GET - Specified Students
-exports.get_studentById=(req,res,next)=>{
+exports.get_studentById=checkAuth, (req,res,next)=>{
     StudentModel.find({
         studentID:req.params.studentID
     })
@@ -154,11 +159,12 @@ exports.student_signIn=(req,res,next)=>{
                         userType:student[0].userType
 
                     },
-                        process.env.JWT_KEY,
+                        JWT_KEY,
                         {
-                            expiresIn: "3h"
+                            expiresIn: "1h"
                         }
                     );
+                    console.log(student);
                     return res.status(200).json({
                         message:'Authorization Success',
                         token:token
@@ -174,4 +180,22 @@ exports.student_signIn=(req,res,next)=>{
                 error:err
         });
     })
+};
+
+
+exports.student_enroll=(req,res,next)=>{
+    const id=req.body.id;
+
+    const enrollment={
+        enrolledCourse: req.params.enrolledCourse
+    };
+    StudentModel.update({_id:id},enrollment)
+        .exec().then(result=>{
+            res.send(result);
+    }).catch(err=>{
+        res.status(500).json({
+            message:'Error update failed!',
+            error:err
+        })
+    });
 };
