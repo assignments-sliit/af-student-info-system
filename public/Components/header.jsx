@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import home from './admin/adminpage1';
-import course from './course/course';
 import exam from './instructor/AddExam';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import '../css.css'
@@ -26,9 +25,7 @@ export default  class header extends Component{
                             <li className="nav-item active">
                                 <Link to="/home" ><b className="nav-link">Home </b></Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/course"><b className="nav-link">Courses</b></Link>
-                            </li>
+
                             <li className="nav-item">
                                 <Link to="/exam"><b className="nav-link">exam</b></Link>
                             </li>
@@ -43,7 +40,6 @@ export default  class header extends Component{
                 </nav><br/><br/>
                 </div>
                     <Route path="/home"  component={home}/>
-                    <Route path="/course" component={course}/>
                     <Route path="/exam" component={exam}/>
                 </Router>
             </div>
