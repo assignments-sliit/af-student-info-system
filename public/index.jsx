@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //render(<App/>,document.getElementById('app'));
 
 const name='Students Information Systems';
-const element=<h1 align="center">{name}</h1>;
+const element=<h1 align="center" className="heading"><b>{name}</b></h1>;
 
 
 

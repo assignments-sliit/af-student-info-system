@@ -16,3 +16,20 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.login_back{
+    background-image: url("../image/login.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius:25px;
+    height:65%;
+    padding:20px;
+}
+
+.heading{
+    font-family: 'B612 Mono', monospace;
+    font-family: 'Oswald', sans-serif;
+    color:#005cbf;
+
+}

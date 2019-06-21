@@ -8,8 +8,8 @@ export default class login extends Component {
 
     render() {
         return (
-            <div >
-                <h1 align="center">Login</h1>
+            <div className="login_back" >
+                <h1 align="center">Login</h1> <br/>
                 <form>
                     <div className="form-group row">
                         <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
