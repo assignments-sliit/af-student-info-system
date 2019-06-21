@@ -20,7 +20,7 @@ const ExamSchema=mongoose.Schema({
     },
 
     examDay:{
-        type:String,
+        type:Date,
         required:true
     }
 

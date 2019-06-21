@@ -3,25 +3,12 @@ const mongoose=require('mongoose');
 
 
 exports.getAllExam=(req,res,next)=>{
-    Exam.find()
-        .select('examID moduleName examDay')
-        //  .populate('modules','moduleCode moduleName lecturerInCharge')
-        .exec()
-        .then(docs=>{
-            res.status(200).json({
-                count:docs.length,
-                exam:docs.map(doc=>{
-                    return{
-                        examID:doc.examID,
-                        moduleName:doc.moduleName,
-                        examDay:doc.examDay
-                    }
-                })
-            })
-        }).catch(err=>{
-        res.status(500).json({
-            error:err
-        });
+    Exam.find(function (err,id) {
+        if(err){
+            console.log(err);
+        }else{
+            res.json(id);
+        }
     });
 };
 
