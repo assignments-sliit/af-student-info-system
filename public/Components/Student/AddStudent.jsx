@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 export default class AddStudent extends Component{
 
@@ -11,8 +12,66 @@ export default class AddStudent extends Component{
             name : '',
             email : '',
             password : ''
-        }
+        };
+
+        //newly added
+        //this.onChangeStudentId = this.onChangeStudentId.bind(this);
+        //this.onChangeName = this.onChangeName.bind(this);
+        //this.onChangeEmail = this.onChangeEmail.bind(this);
+        //this.onChangePassword = this.onChangePassword.bind(this);
+        //this.onSubmit = this.onSubmit.bind(this);
     }
+
+    /*newly add
+    onChangeStudentId(e){
+        this.setState({
+            studentID: e.target.value
+        });
+    }
+
+    onChangeName(e){
+        this.setState({
+            name: e.target.value
+        });
+    }
+
+    onChangeEmail(e){
+        this.setState({
+            email : e.target.value
+        });
+    }
+
+    onChangePassword(e){
+        this.setState({
+            password: e.target.value
+        });
+    }
+
+
+    //newly add
+    onSubmit(e){
+        e.preventDefault();
+
+        const reg_student= {
+            studentID: this.state.studentID,
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password
+        };
+
+        axios.post('/api/students/add-student', reg_student)
+            .then(res=> console.log(res.data))
+            .catch(err=> this.setState({
+                errors: err.response.data
+            }));
+
+        this.setState({
+            studentID: '',
+            name: '',
+            email: '',
+            password: ''
+        });
+    }*/
 
     handleOnSubmit(e){
         e.preventDefault();
@@ -30,6 +89,9 @@ export default class AddStudent extends Component{
     }
 
     render(){
+        //newly add
+        //console.log(this.state);
+
         return(
         <div className='container bg-dark'>
             <div className='row'>
@@ -39,7 +101,7 @@ export default class AddStudent extends Component{
                     </div>
                     <div className='card-body'>
                         <center>
-                        <form onSubmit={value => this.handleOnSubmit(value)} className='was-validated'>
+                            <form onSubmit={value => this.handleOnSubmit(value)}>
                             <div className='form-group'>
                                 <label htmlFor="studentID">Student ID</label>
                                 <input type="text" className='form-control' name='studentID' id='studentID' required />
@@ -56,15 +118,17 @@ export default class AddStudent extends Component{
                                 <div className="valid-feedback">Valid.</div>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="studentID">Password</label>
+                                <label htmlFor="password">Password</label>
                                 <input type="password" className='form-control' name='password' id='password' required />
                                 <div className="valid-feedback">Valid.</div>
                             </div>
                             <br/><br/>
                             <div className='form-group'>
-                                <button type='submit' className='btn btn-success form-control'>Add</button>
+                                <button type='submit' className='btn btn-success form-control'>Sign_Up</button>
                                 <br/><br/>
                                 <button type='reset' className='btn btn-danger form-control'>Cancel</button>
+                                <br/>
+                                <a href="#">Already registered? Sign In</a>
                             </div>
                         </form>
                         </center>
