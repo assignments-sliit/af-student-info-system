@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AddStudent from './Components/AddStudent';
+import AddStudent from './Components/Student/AddStudent';
 
 export default class Student extends Component{
     constructor(props){

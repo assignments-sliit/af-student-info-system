@@ -18,11 +18,6 @@ export default class adminpage1 extends Component{
 
     }
 
-
-
-
-
-
     render() {
         console.log(this.state);
         return(
