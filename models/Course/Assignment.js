@@ -11,17 +11,25 @@ const assignmentSchema=mongoose.Schema({
         ref:'Module'
     },
     dueDate:{
-        type:datetime,
+        type:Date,
         required:true
     },
     uploadTime:{
-        type:datetime
+        type:Date
     },
     submittedOnTime:{
-        type:Boolean
+        type:Boolean,
+        check:()=>{
+            if (this.dueDate > this.uploadTime) {
+                this.value = true;
+            } else if(this.dueDate<this.uploadTime || this.uploadTime ===null){
+                this.value = false;
+            }
+
+        }
     },
     file:{
-        type:File
+        type:String
     },
     submittedBy:{
         type:mongoose.Schema.Types.ObjectId,
@@ -32,6 +40,10 @@ const assignmentSchema=mongoose.Schema({
     },
     marks:{
         type:Number
+    },
+    isOpen:{
+        type:Boolean,
+        required:true
     }
 });
 

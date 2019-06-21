@@ -10,9 +10,11 @@ const moduleRouter=require('./routes/Course/moduleRoutes');
 const adminRouter=require('./routes/Admin/AdminRoute');
 const instructorRouter=require('./routes/Instructor/InstructorRoute');
 const examRouter=require('./routes/Instructor/ExamRoute');
+const assignmentRouters=require('./routes/Course/assignmentRoute');
 const bundler=new Bundler('./public/index.html',{});
 let db;
 
+app.use('/assignments/file',express.static('uploads/assignment'));
 app.use(express.json());
 app.use('/api/courses',courseRouter);
 app.use('/api/students',studentRouter);
@@ -20,6 +22,7 @@ app.use('/api/modules',moduleRouter);
 app.use('/api/admins',adminRouter);
 app.use('/api/instructors',instructorRouter);
 app.use('/api/exams',examRouter);
+app.use('/api/assignments', assignmentRouters);
 
 app.use(bundler.middleware());
 app.use(express.static('./dist'));
