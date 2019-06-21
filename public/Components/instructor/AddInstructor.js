@@ -125,6 +125,8 @@ export default class AddInstructor extends Component{
 
                 </form>
             </div>
+
+
         );
     }
 }
