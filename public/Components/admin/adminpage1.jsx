@@ -5,7 +5,7 @@ import Students from '../../../image/student.jpg';
 import Lecture from '../../../image/lectures.jpg';
 import Course from '../../../image/course.jpg';
 import Admin from '../../../image/admin.jpg';
-import Adminstudent from '../Student/Student';
+import Adminstudent from '../Student/ViewStudent';
 import Admin_course from './course_admin';
 import AAdmin from'./admins';
 import Add_Instructor from '../instructor/AddInstructor';

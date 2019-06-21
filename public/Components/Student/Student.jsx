@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AddStudent from './AddStudent';
-import ViewStudent from './view_student';
+
 
 export default class Student extends Component{
 

@@ -13,65 +13,7 @@ export default class AddStudent extends Component{
             email : '',
             password : ''
         };
-
-        //newly added
-        //this.onChangeStudentId = this.onChangeStudentId.bind(this);
-        //this.onChangeName = this.onChangeName.bind(this);
-        //this.onChangeEmail = this.onChangeEmail.bind(this);
-        //this.onChangePassword = this.onChangePassword.bind(this);
-        //this.onSubmit = this.onSubmit.bind(this);
     }
-
-    /*newly add
-    onChangeStudentId(e){
-        this.setState({
-            studentID: e.target.value
-        });
-    }
-
-    onChangeName(e){
-        this.setState({
-            name: e.target.value
-        });
-    }
-
-    onChangeEmail(e){
-        this.setState({
-            email : e.target.value
-        });
-    }
-
-    onChangePassword(e){
-        this.setState({
-            password: e.target.value
-        });
-    }
-
-
-    //newly add
-    onSubmit(e){
-        e.preventDefault();
-
-        const reg_student= {
-            studentID: this.state.studentID,
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-        };
-
-        axios.post('/api/students/add-student', reg_student)
-            .then(res=> console.log(res.data))
-            .catch(err=> this.setState({
-                errors: err.response.data
-            }));
-
-        this.setState({
-            studentID: '',
-            name: '',
-            email: '',
-            password: ''
-        });
-    }*/
 
     handleOnSubmit(e){
         e.preventDefault();
@@ -89,8 +31,6 @@ export default class AddStudent extends Component{
     }
 
     render(){
-        //newly add
-        //console.log(this.state);
 
         return(
         <div className='container bg-dark'>
@@ -124,7 +64,7 @@ export default class AddStudent extends Component{
                             </div>
                             <br/><br/>
                             <div className='form-group'>
-                                <button type='submit' className='btn btn-success form-control'>Sign_Up</button>
+                                <button type='submit' className='btn btn-success form-control'>Sign Up</button>
                                 <br/><br/>
                                 <button type='reset' className='btn btn-danger form-control'>Cancel</button>
                                 <br/>

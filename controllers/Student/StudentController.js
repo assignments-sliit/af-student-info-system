@@ -73,7 +73,7 @@ exports.get_studentById=(req,res,next)=>{
 
 
 //GET - All Students
-exports.getAllStudents=(req,res,next)=>{
+/*exports.getAllStudents=(req,res,next)=>{
     StudentModel.find()
         .select('studentID name email')
         //.populate('students','studentID name email')
@@ -95,6 +95,16 @@ exports.getAllStudents=(req,res,next)=>{
         res.status(500).json({
             error:err
         });
+    });
+};*/
+
+exports.getAllStudents=(req,res,next)=>{
+    StudentModel.find(function (err,id) {
+        if(err){
+            console.log(err);
+        }else{
+            res.json(id);
+        }
     });
 };
 
@@ -118,37 +128,7 @@ exports.delete_byStudentID = (req,res,next)=>{
     })
 };
 
-//UPDATE - usingStudentID
-/*exports.update_byStudentID = (req,res,next)=> {
-    const stuID = req.params.studentID;
-    const updateOps={};
 
-    for(const ops of req.body){
-        updateOperation[ops.propName]=ops.value;
-    }
-
-    StudentModel.update({studentID:stuID},{$set:updateOperation})
-        .exec()
-        .then(result=>{
-            res.status(200).json({
-                message:'Successfully updated Student Record!!',
-
-                updatedStuRecord: result,
-
-                request:{
-                    type:'GET',
-                    url:'http://localhost:5000/api/students/' + stuID
-                }
-            });
-    }).catch(err=>{
-        console.log(err);
-
-        res.status(500).json({
-            error:err,
-            message:"Not Successful"
-        });
-    });
-};*/
 
 
 
