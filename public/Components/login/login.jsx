@@ -9,16 +9,16 @@ export default class login extends Component {
     render() {
         return (
             <div className="login_back" >
-                <h1 align="center">Login</h1> <br/>
+                <h1 align="center"><b className="l_text">LOGIN</b></h1> <br/>
                 <form>
                     <div className="form-group row">
-                        <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                        <label htmlFor="inputEmail3" className="col-sm-2 col-form-label"><b className="l_text">Email</b></label>
                         <div className="col-sm-6">
                             <input type="email" className="form-control" id="inputEmail3" placeholder="Email"/>
                         </div>
                     </div>
                     <div className="form-group row">
-                        <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                        <label htmlFor="inputPassword3" className="col-sm-2 col-form-label"><b className="l_text">Password</b></label>
                         <div className="col-sm-6">
                             <input type="password" className="form-control" id="inputPassword3" placeholder="Password"/>
                         </div>
