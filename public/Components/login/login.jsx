@@ -9,7 +9,7 @@ export default class login extends Component {
     render() {
         return (
             <div className="login_back" >
-                <h1 align="center"><b className="l_text">LOGIN</b></h1> <br/>
+                <h1 align="center"><b className="l_text">LOGIN</b></h1> <br/><br/>
                 <form>
                     <div className="form-group row">
                         <label htmlFor="inputEmail3" className="col-sm-2 col-form-label"><b className="l_text">Email</b></label>
