@@ -3,25 +3,12 @@ const mongoose=require('mongoose');
 
 
 exports.getAllInstructor=(req,res,next)=>{
-    Instructor.find()
-        .select('instructorID name email')
-        //  .populate('modules','moduleCode moduleName lecturerInCharge')
-        .exec()
-        .then(docs=>{
-            res.status(200).json({
-                count:docs.length,
-                instructor:docs.map(doc=>{
-                    return{
-                        instructorID:doc.instructorID,
-                        name:doc.name,
-                        email:doc.email
-                    }
-                })
-            })
-        }).catch(err=>{
-        res.status(500).json({
-            error:err
-        });
+    Instructor.find(function (err,id) {
+        if(err){
+            console.log(err);
+        }else{
+            res.json(id);
+        }
     });
 };
 
