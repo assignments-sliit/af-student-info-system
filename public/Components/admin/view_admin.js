@@ -8,7 +8,7 @@ const Admin = props =>(
         <td>{props.admin.adminID}</td>
         <td>{props.admin.name}</td>
         <td>{props.admin.email}</td>
-        <td>{props.admin.password}</td>
+
         <td>
             <Link to={"/std/"+props.admin.adminID}>edit</Link>
         </td>
@@ -55,7 +55,6 @@ export  default class view_admins extends Component{
                         <th>Admin ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>password</th>
                         <th>Action's</th>
                     </tr>
                     </thead>
@@ -68,4 +67,6 @@ export  default class view_admins extends Component{
         );
     }
 
-}
+};
+
+

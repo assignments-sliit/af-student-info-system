@@ -14,7 +14,7 @@ export default class admins extends Component{
               <Router>
               <ul className="nav nav-tabs">
                   <li className="nav-item">
-                      <Link to="/admin" className="nav-link active">Add</Link>
+                      <Link to="/add-admin" className="nav-link active">Add</Link>
                   </li>
                   <li className="nav-item">
                       <Link to="/adminview" className="nav-link" >View's</Link>
@@ -22,7 +22,7 @@ export default class admins extends Component{
 
               </ul><br/>
 
-                  <Route path="/admin" exact component={Add_Admin}/>
+                  <Route path="/add-admin" exact component={Add_Admin}/>
                   <Route path="/adminview" component={View_Admin}/>
               </Router>
               <br/><br/>
