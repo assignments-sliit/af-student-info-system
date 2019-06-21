@@ -14,5 +14,5 @@ route.get('/get-all', InstructorController.getAllInstructor);
 
 //DELETE
 route.delete('/delete-instructor/:instructorID', InstructorController.deleteInstructorByCode);
-
+///QQQQ
 module.exports = route;
