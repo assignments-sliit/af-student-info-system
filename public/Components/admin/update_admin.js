@@ -46,11 +46,16 @@ export default class update_admin extends Component{
         e.preventDefault();
 
         const new_admin = {
-            adminID: this.state.adminID,
+
             name: this.state.name,
             email: this.state.email,
             password: this.state.password
         }
+
+        axios.put('http://localhost:5000/api/admins/update/'+this.props.match.params.id,new_admin)
+            .then(res => console.log(res.data));
+
+
     }
 
    componentDidMount() {

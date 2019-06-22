@@ -9,8 +9,13 @@ route.post('/add', AdminController.addAdmin);
 //GET - for particular student
 route.get('/get/:adminID', AdminController.findAdminByCode);
 
+//UPDATE
+
+
 //GET_ALL
 route.get('/get-all', AdminController.getAllAdmin);
+//GET-DELETE
+route.delete('/delete/:adminID',AdminController.deleteAdminByCode);
 
 //UPDATE
 route.put('/update/:adminID',AdminController.admin_update);

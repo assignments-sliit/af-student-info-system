@@ -72,10 +72,11 @@ exports.findAdminByCode=(req,res,next)=>{
 
 //update controller action
 exports.admin_update=(req,res,next)=>{
-    const id=req.body.adminID;
+    const id=req.params.adminID;
 
     const updatedAdmin={
         name:req.body.name,
+        email:req.body.email,
         password: req.body.password,
     };
     Admin.update({adminID:id},updatedAdmin)
@@ -90,19 +91,14 @@ exports.admin_update=(req,res,next)=>{
 };
 
 exports.deleteAdminByCode=(req,res,next)=>{
-    const code=req.param.adminID;
-    Admin.remove({
-        courseCode:code
-    }).exec()
-        .then(result=>{
-            res.status(200).json({
-                message:'deleted',
-                deletedCourse:result
-            });
-        }).catch(err=>{
-        console.log(err.message);
-        res.status(500).json({
-            error:err
-        });
+
+    Admin.remove({adminID:req.params.adminID},function (err,admin) {
+        if(err)
+            res.status(400).json(err);
+
+        else
+            res.status(200).json('Successfully removed'+admin.name)
     })
 };
+
+
