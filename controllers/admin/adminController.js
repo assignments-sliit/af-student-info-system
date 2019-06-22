@@ -70,6 +70,7 @@ exports.findAdminByCode=(req,res,next)=>{
     });
 };
 
+//update controller action
 exports.admin_update=(req,res,next)=>{
     const id=req.body.adminID;
 
