@@ -16,7 +16,7 @@ module.exports=(req,res,next)=>{
         }
     }catch (e) {
         return res.status(401).json({
-            message:'Auth Failed'
+            message:'Not an Instructor'
         })
     }
 

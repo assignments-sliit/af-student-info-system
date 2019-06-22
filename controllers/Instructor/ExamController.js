@@ -1,6 +1,7 @@
 const Exam=require('../../models/Instructor/Exam');
 const mongoose=require('mongoose');
-
+const nodemailer=require('nodemailer');
+const Student=require('../../models/Student/Student');
 
 exports.getAllExam=(req,res,next)=>{
     Exam.find(function (err,id) {
@@ -31,6 +32,37 @@ exports.addExam=(req,res,next)=>{
                 });
 
                 exam.save().then(result=>{
+
+                    Student.find().select('email').exec().then(results=>{
+                        const transporter=nodemailer.createTransport({
+                            service:'gmail',
+                            auth:{
+                                user:'stu2019info@gmail.com',
+                                pass:'ljxgjhhfuvotignp'
+                            }
+                        });
+
+
+                        const mailOptions={
+                            from:'',
+                            to: results,
+                            subject:'New Exam added',
+                            html:'Hi Student,<br/> A new exam has been created for the module :'+ result.moduleName+' <br/>'
+                            +'Please Login to see the exam on system'
+                        };
+
+                        transporter.sendMail(mailOptions,(error,info)=>{
+                            if(error){
+                                console.log(error);
+                            }else{
+                                console.log('Email sent:'+info.response);
+                            }
+                        })
+                        console.log(results);
+
+                    });
+
+
                     console.log(result);
                     res.status(201).json({
                         message:'Exam added',

@@ -19,7 +19,11 @@ const CourseSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Module'
        }
-    ]
+    ],
+    instructor:{
+       type:mongoose.Schema.Types.ObjectId,
+        ref:'Instructor'
+    }
 });
 
 module.exports=mongoose.model('Course',CourseSchema);

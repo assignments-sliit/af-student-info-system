@@ -59,7 +59,8 @@ router.put('/assignment/upload/:assignmentId',checkAuth,upload.single('file'),(r
     };
 
     // for(const ops of newAssignment){
-    //     updateOps[ops.propName]=ops.value;
+    //
+    //   updateOps[ops.propName]=ops.value;
     // }
 
     Assignment.update({_id:id},newAssignment)
