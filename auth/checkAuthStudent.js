@@ -5,11 +5,14 @@ const JWT_KEY=keys.JWT_KEY;
 module.exports=(req,res,next)=>{
   try{const token=req.headers.authorization.split(" ")[1];
   const decoded=jwt.verify(token,JWT_KEY);
-  req.userData=decoded;
+
   if(decoded.userType==='student'){
+      req.userData=decoded;
       next();
+      console.log(decoded.userType);
+
   }else{
-      return res.status(401).json('No access!')
+      return res.status(401).json('Not a '+ decoded.userType+' !')
   }
   }catch (e) {
       return res.status(401).json({

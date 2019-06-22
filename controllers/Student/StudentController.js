@@ -2,7 +2,7 @@ const StudentModel = require('../../models/Student/Student');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt=require('jsonwebtoken');
-const checkAuth=require('../../auth/checkAuthStudent');
+const checkAuth=require('../../auth/check-auth');
 const keys=require('../../config/keys');
 const JWT_KEY=keys.JWT_KEY;
 
@@ -56,7 +56,7 @@ exports.students_signup = (req, res, next)=>{
 
 
 //GET - Specified Students
-exports.get_studentById=checkAuth, (req,res,next)=>{
+exports.get_studentById= (req,res,next)=>{
     StudentModel.find({
         studentID:req.params.studentID
     })

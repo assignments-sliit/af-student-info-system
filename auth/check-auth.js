@@ -1,9 +1,11 @@
 const jwt=require('jsonwebtoken');
+const keys=require('../config/keys');
+const JWT_KEY=keys.JWT_KEY;
 
 module.exports=(req,res,next)=>{
     try {
         const token=req.headers.authorization.split(" ")[1];
-        const decoded=jwt.verify(token,process.env.JWT_KEY);
+        const decoded=jwt.verify(token,JWT_KEY);
         req.userDate=decoded;
         next();
     }catch (e) {

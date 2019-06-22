@@ -1,5 +1,8 @@
 const express = require('express');
 const route = express.Router();
+const checkAuth=require('../../auth/check-auth');
+const keys=require('../../config/keys');
+const JWT_KEY=keys.JWT_KEY;
 
 const StudentController = require('../../controllers/Student/StudentController');
 
@@ -7,7 +10,7 @@ const StudentController = require('../../controllers/Student/StudentController')
 route.post('/add-student', StudentController.students_signup);
 
 //GET - for particular student
-route.get('/get-student/:studentID', StudentController.get_studentById);
+route.get('/get-student/:studentID',checkAuth, StudentController.get_studentById);
 
 //GET_ALL
 route.get('/get-all', StudentController.getAllStudents);

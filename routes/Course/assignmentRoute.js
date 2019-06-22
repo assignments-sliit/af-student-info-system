@@ -2,7 +2,9 @@ const express=require('express');
 const router=express.Router();
 const Assignment=require('../../models/Course/Assignment');
 //const mongoose=require('mongoose');
-
+const checkAuth=require('../../auth/checkAuthStudent');
+const keys=require('../../config/keys');
+const JWT_KEY=keys.JWT_KEY;
 const assignmentController=require('../../controllers/Course/assignmentController');
 const multer=require('multer');
 
@@ -38,7 +40,7 @@ router.get('/assignment/:moduleCode', assignmentController.getAllAssignments);
 
 
 //upload assignment
-router.put('/assignment/upload/:assignmentId',upload.single('file'),(req,res,next)=>{
+router.put('/assignment/upload/:assignmentId',checkAuth,upload.single('file'),(req,res,next)=>{
     const id=req.params.assignmentId;
     const newAssignment={
         uploadTime:Date.now(),
