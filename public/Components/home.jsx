@@ -9,15 +9,14 @@ export default class home extends Component{
         return(
             <div>
                 <div>
-                   <home>home</home>
+                   <home>Home</home>
                 </div>
 
                 <div className="card bg-dark text-white">
                     <img src={std2} className="card-img" style={{height:600}} alt="..."/>
                         <div className="card-img-overlay">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 className="card-title">Your path to success!</h5>
+                            <p className="card-text">Use this system to keep track of your academic activities and see your success.</p>
                             <p className="card-text">Last updated 3 mins ago</p>
                         </div>
                 </div>

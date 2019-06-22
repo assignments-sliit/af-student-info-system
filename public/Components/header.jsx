@@ -35,7 +35,7 @@ export default  class header extends Component{
                             </li>
 
                             <li className="nav-item">
-                                <Link to="/exam"><b className="nav-link">exam</b></Link>
+                                <Link to="/course"><b className="nav-link">Course</b></Link>
                             </li>
 
                         </ul>
