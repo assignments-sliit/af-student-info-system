@@ -108,20 +108,13 @@ exports.findInstructorByCode=(req,res,next)=>{
 };
 
 exports.deleteInstructorByCode=(req,res,next)=>{
-    const code=req.param.instructorID;
-    Instructor.remove({
-        instructorID:code
-    }).exec()
-        .then(result=>{
-            res.status(200).json({
-                message:'deleted',
-                deletedInstructor:result
-            });
-        }).catch(err=>{
-        console.log(err.message);
-        res.status(500).json({
-            error:err
-        });
+
+    Instructor.remove({instructorID:req.params.instructorID},function (err,instructor) {
+            if(err)
+                res.status(400).json(err);
+
+            else
+                res.status(200).json('Successfully removed'+instructor.name)
     })
 };
 
