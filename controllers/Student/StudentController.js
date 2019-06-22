@@ -184,7 +184,7 @@ exports.student_signIn=(req,res,next)=>{
 
 
 exports.student_enroll=(req,res,next)=>{
-    const id=req.body.id;
+    const id=req.params.id;
 
     const enrollment={
         enrolledCourse: req.params.enrolledCourse

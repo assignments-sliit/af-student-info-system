@@ -12,4 +12,7 @@ route.get('/get/:adminID', AdminController.findAdminByCode);
 //GET_ALL
 route.get('/get-all', AdminController.getAllAdmin);
 
+//UPDATE
+route.put('/update/:adminID',AdminController.admin_update);
+
 module.exports = route;

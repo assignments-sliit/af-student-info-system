@@ -70,6 +70,24 @@ exports.findAdminByCode=(req,res,next)=>{
     });
 };
 
+exports.admin_update=(req,res,next)=>{
+    const id=req.body.adminID;
+
+    const updatedAdmin={
+        name:req.body.name,
+        password: req.body.password,
+    };
+    Admin.update({adminID:id},updatedAdmin)
+        .exec().then(result=>{
+        res.send(result);
+    }).catch(err=>{
+        res.status(500).json({
+            message:'Error update failed!',
+            error:err
+        })
+    });
+};
+
 exports.deleteAdminByCode=(req,res,next)=>{
     const code=req.param.adminID;
     Admin.remove({
