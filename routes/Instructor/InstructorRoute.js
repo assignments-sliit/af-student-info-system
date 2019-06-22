@@ -20,4 +20,7 @@ route.delete('/delete-instructor/:instructorID', InstructorController.deleteInst
 //Sign in
 route.post('/login',InstructorController.instructor_signIn);
 
+//UPDATE
+route.put('/update/:instructorID',InstructorController.instructor_update);
+
 module.exports = route;

@@ -165,3 +165,22 @@ exports.instructor_signIn=(req,res,next)=>{
         });
     })
 };
+
+exports.instructor_update=(req,res,next)=>{
+    const id=req.params.instructorID;
+
+    const updatedInstructor={
+        name:req.body.name,
+        email:req.body.email,
+        password: req.body.password,
+    };
+    Instructor.update({instructorID:id},updatedInstructor)
+        .exec().then(result=>{
+        res.send(result);
+    }).catch(err=>{
+        res.status(500).json({
+            message:'Error update failed!',
+            error:err
+        })
+    });
+};

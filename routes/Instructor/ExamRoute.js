@@ -7,7 +7,7 @@ const checkAuthInstructor=require('../../auth/checkAuthInstructor');
 router.get('/get-all',examController.getAllExam);
 
 //add a new exam
-router.post('/add',checkAuthInstructor,examController.addExam);
+router.post('/add',examController.addExam);
 
 //get a exam by code
 router.get('/exam/:examID',examController.findExamByCode);

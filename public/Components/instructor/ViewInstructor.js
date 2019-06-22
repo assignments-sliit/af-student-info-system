@@ -9,8 +9,18 @@ const Instructor = props =>(
         <td>{props.instructor.name}</td>
         <td>{props.instructor.email}</td>
         <td>
-            <Link to={"/instructor/"+props.instructor.instructorID}>edit</Link>
+            <Link to={"/instructor-edit/"+props.instructor.instructorID}>edit</Link>
         </td>
+        {/*<td>*/}
+            {/*<Link color="danger" onClick={this.onDelete}>Delete</Link>*/}
+            {/*<Button color="danger" onClick={()=>{*/}
+                {/*axios.delete('http://localhost:5000/instructors/delete-instructor/'+props.match.params.id)*/}
+                    {/*.then(*/}
+                        {/*res => console.log(res.data)*/}
+                    {/*)*/}
+            {/*}}>Delete</Button>*/}
+            {/*<Link to={"/instructor-delete/"+props.instructor.instructorID}>delete</Link>*/}
+        {/*</td>*/}
     </tr>
 );
 
@@ -42,6 +52,13 @@ export  default class ViewInstructor extends Component{
         });
     }
 
+    onDelete(){
+        axios.get('http://localhost:5000/instructors/delete-instructor/'+this.props.match.params.id)
+            .then(
+                res => console.log(res.data)
+            )
+    }
+
 
 
     render() {
@@ -55,6 +72,7 @@ export  default class ViewInstructor extends Component{
                         <th>Name</th>
                         <th>Email</th>
                         <th>Action's</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
