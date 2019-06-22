@@ -2,26 +2,12 @@ const Course=require('../../models/Course/Course');
 const mongoose=require('mongoose');
 
 exports.getAllCourses=(req,res,next)=>{
-    Course.find()
-        .select('courseCode courseName module')
-        .populate('module','-_id moduleCode moduleName lecturerInCharge')
-        .exec()
-        .then(docs=>{
-            res.status(200).json({
-                count:docs.length,
-                courses:docs.map(doc=>{
-                    return{
-                        courseCode:doc.courseCode,
-                        courseName:doc.courseName,
-                        courseType:doc.courseType,
-                        module:doc.module
-                    }
-                })
-            })
-        }).catch(err=>{
-        res.status(500).json({
-            error:err
-        });
+    Course.find(function (err,id) {
+        if(err){
+            console.log(err);
+        }else{
+            res.json(id);
+        }
     });
 };
 
