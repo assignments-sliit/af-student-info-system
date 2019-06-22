@@ -6,7 +6,8 @@ export default  class course extends Component{
     render() {
         return(
             <div>
-                <h1>Course</h1>
+            <h1 align="center">Course</h1>
+
             </div>
         )
     }

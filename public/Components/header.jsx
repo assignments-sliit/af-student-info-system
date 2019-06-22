@@ -3,6 +3,7 @@ import home from './admin/adminpage1';
 import exam from './instructor/AddExam';
 import addStd from './Student/AddStudent';
 import Home from './home';
+import Std_dashboard from './Student/student_dashboard';
 
 import AAdmin from'./admin/admins';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
@@ -13,7 +14,7 @@ import Add_Instructor from "./admin/instructor";
 import Login from"./login/login";
 import Admin_login from './login/admin_login';
 import Instr_login from './login/instr_login';
-
+import AddStd from './Student/AddStudent';
 
 
 
@@ -41,11 +42,7 @@ export default  class header extends Component{
                             </li>
 
                         </ul>
-                        <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search"
-                                   aria-label="Search"/>
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
+
                         <ul>
                             <li className="nav-item">
                                 <Link to="/login" className=" btn btn-outline-success my-2 my-sm-0"><b className="nav-link">Login</b></Link>
@@ -59,12 +56,13 @@ export default  class header extends Component{
                     <Route path="/exam" component={exam}/>
                     <Route path="/admin-01" component={AAdmin}/>
                     <Route path="/std" component={Adminstudent}/>
-                    <Route path="/course" component={Admin_course}/>
+                    <Route path="/course" component={Std_dashboard}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/instructor" component={Add_Instructor}/>
                     <Route path="/addstd" component={addStd}/>
                     <Route path="/admin-login" component={Admin_login}/>
                     <Route path="/inst-login" component={Instr_login}/>
+                    <Route path="/student_register" component={AddStd}/>
 
 
 
