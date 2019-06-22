@@ -126,7 +126,7 @@ export default class update_admin extends Component{
                             </div>
                         </div><br/>
 
-                        <button type="submit" className="btn btn-success">ADD</button>
+                        <button type="submit" className="btn btn-success">UPDATE</button>
 
                     </form>
 

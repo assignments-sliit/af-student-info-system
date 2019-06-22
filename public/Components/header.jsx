@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import home from './admin/adminpage1';
 import exam from './instructor/AddExam';
 import addStd from './Student/AddStudent';
+import Home from './home';
 
 import AAdmin from'./admin/admins';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
@@ -52,7 +53,7 @@ export default  class header extends Component{
                     </div>
                 </nav><br/><br/>
                 </div>
-                    <Route path="/" exact component={home}/>
+                    <Route path="/" exact component={Home}/>
                     <Route path="/exam" component={exam}/>
                     <Route path="/admin-01" component={AAdmin}/>
                     <Route path="/std" component={Adminstudent}/>

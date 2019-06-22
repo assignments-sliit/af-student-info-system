@@ -36,3 +36,12 @@ body{
     font-family: 'Oswald', sans-serif;
     color: #e2e3e5;
 }
+
+.homeImg{
+    margin:10px;
+    position: center;
+    border-radius:25px;
+    border-color:black;
+
+
+}
