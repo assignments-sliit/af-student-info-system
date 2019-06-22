@@ -27,7 +27,8 @@ exports.addAdmin=(req,res,next)=>{
                     adminID:req.body.adminID,
                     name: req.body.name,
                     email:req.body.email,
-                    password:req.body.password
+                    password:req.body.password,
+                    userType:'admin'
                 });
 
                 admin.save().then(result=>{
@@ -53,7 +54,7 @@ exports.findAdminByCode=(req,res,next)=>{
     })
         .exec().then(result => {
         if(result.length >= 1){
-            console.log(result)
+            console.log(result);
             res.status(200).send({
                 admin:result
             });
