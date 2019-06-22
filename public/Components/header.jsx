@@ -11,7 +11,9 @@ import Adminstudent from "./Student/ViewStudent";
 import Admin_course from "./admin/course_admin";
 import Add_Instructor from "./admin/instructor";
 import Login from"./login/login";
-import Edit_admin from './admin/update_admin';
+import Admin_login from './login/admin_login';
+import Instr_login from './login/instr_login';
+
 
 
 
@@ -61,6 +63,8 @@ export default  class header extends Component{
                     <Route path="/login" component={Login}/>
                     <Route path="/instructor" component={Add_Instructor}/>
                     <Route path="/addstd" component={addStd}/>
+                    <Route path="/admin-login" component={Admin_login}/>
+                    <Route path="/inst-login" component={Instr_login}/>
 
 
 
