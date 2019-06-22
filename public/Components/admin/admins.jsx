@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import Add_Admin from './add_Admin';
 import View_Admin from './view_admin';
 import ViewInstructor from '../instructor/ViewInstructor';
+import Edit_admin from "./update_admin";
 
 export default class admins extends Component{
 
@@ -29,6 +30,7 @@ export default class admins extends Component{
                   <Route path="/add-admin" exact component={Add_Admin}/>
                   <Route path="/adminview" component={View_Admin}/>
                   <Route path="/instructorview" component={ViewInstructor}/>
+                  <Route path="/admin-edit/:id" component={Edit_admin}/>
               </Router>
               <br/><br/>
           </div>

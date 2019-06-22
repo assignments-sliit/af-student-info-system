@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Edit_admin from "./update_admin";
 
 
 const Admin = props =>(
@@ -10,7 +11,7 @@ const Admin = props =>(
         <td>{props.admin.email}</td>
 
         <td>
-            <Link to={"/std/"+props.admin.adminID}>edit</Link>
+            <Link to={"/admin-edit/"+props.admin.adminID}>edit</Link>
         </td>
     </tr>
 );
@@ -63,6 +64,7 @@ export  default class view_admins extends Component{
                     </tbody>
 
                 </table>
+
             </div>
         );
     }

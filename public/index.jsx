@@ -19,4 +19,5 @@ const element=<h1 align="center" className="heading"><b>{name}</b></h1>;
     render(<div>
         <h1>{element}</h1> <br/>
         <Header/>
+
     </div>,document.getElementById('app'));

@@ -50,18 +50,19 @@ exports.addAdmin=(req,res,next)=>{
 exports.findAdminByCode=(req,res,next)=>{
     Admin.find({
         adminID:req.params.adminID
-    }).exec().then(result=>{
-        if(result.length>=1){
-            res.status(200).json({
+    })
+        .exec().then(result => {
+        if(result.length >= 1){
+            console.log(result)
+            res.status(200).send({
                 admin:result
             });
-
-        }else{
+        }else {
             res.status(404).json({
-                message:'Nothing was found here!'
+                message: 'Student ID does not match!!'
             });
         }
-    }).catch(err=>{
+    }).catch(err => {
         res.status(500).json({
             error:err
         });
