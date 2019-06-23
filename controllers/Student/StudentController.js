@@ -97,31 +97,6 @@ exports.admin_update=(req,res,next)=>{
     });
 };
 
-//GET - All Students
-/*exports.getAllStudents=(req,res,next)=>{
-    StudentModel.find()
-        .select('studentID name email')
-        //.populate('students','studentID name email')
-        .exec()
-        .then(docs=>{
-            res.status(200).json({
-                count:docs.length,
-
-                students:docs.map(doc=>{
-                    return{
-                        studentID:doc.studentID,
-                        name:doc.name,
-                        email:doc.email
-
-                    }
-                })
-            })
-        }).catch(err=>{
-        res.status(500).json({
-            error:err
-        });
-    });
-};*/
 
 exports.getAllStudents=(req,res,next)=>{
     StudentModel.find(function (err,id) {
@@ -135,22 +110,18 @@ exports.getAllStudents=(req,res,next)=>{
 
 //DELETE - usingStudentID
 exports.delete_byStudentID = (req,res,next)=>{
-    const stuID = req.params.studentID;
-
-    StudentModel.remove({
-        studentID:stuID
-    }).exec().then(result=>{
+    StudentModel.findByIdAndDelete(req.params.studentID).exec().then(result=>{
         res.status(200).json({
             message: 'Successfully deleted!!',
             deletedStuRecord: result
         });
     }).catch(err=>{
         console.log(err.message);
-
         res.status(500).json({
             error:err
         });
-    })
+    });
+
 };
 
 
@@ -203,7 +174,7 @@ exports.student_signIn=(req,res,next)=>{
 
 
 exports.student_enroll=(req,res,next)=>{
-    const id=req.params.id;
+    const id=req.body.id;
 
     const enrollment={
         enrolledCourse: req.params.enrolledCourse

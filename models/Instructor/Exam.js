@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 
 const ExamSchema=mongoose.Schema({
 
-    _id:mongoose.Schema.Types.ObjectId,
+   // _id:mongoose.Schema.Types.ObjectId,
 
     examID: {
         type: String,
@@ -20,7 +20,7 @@ const ExamSchema=mongoose.Schema({
     },
 
     examDay:{
-        type:Date,
+        type:String,
         required:true
     }
 
