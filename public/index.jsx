@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Header from './Components/header';
 import AdminHeader from './Components/admin/admin_header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import InsHeader from './Components/instructor/InstructorHeader';
 
 
 const name='Student Information System';
@@ -15,6 +16,7 @@ const element=<h1 align="center" className="heading"><b>{name}</b></h1>;
          <Switch>
             <Route exact path="/admin_header" component={AdminHeader}/>
         <Route exact path="/a" component={Header}/>
+             <Route exact path="/InstructorHeader" component={InsHeader}/>
          </Switch>
         </Router>
     </div>,document.getElementById('app'));
