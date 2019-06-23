@@ -13,6 +13,9 @@ const Admin = props =>(
         <td>
             <Link to={"/admin-edit/"+props.admin.adminID}>edit</Link>
         </td>
+        <td>
+            <Link to={"/admin-delete/"+props.admin.adminID}>delete</Link>
+        </td>
     </tr>
 );
 

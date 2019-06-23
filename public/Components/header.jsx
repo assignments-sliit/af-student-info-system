@@ -68,7 +68,7 @@ export default  class header extends Component{
                     <Route path="/admin-login" component={Admin_login}/>
                     <Route path="/inst-login" component={Instr_login}/>
                     <Route path="/student_register" component={AddStd}/>
-
+                    <Route exact path="/admin_header" component={AdminHeader}/>
 
 
                 </Router>

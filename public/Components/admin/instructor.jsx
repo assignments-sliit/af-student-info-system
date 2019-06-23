@@ -25,16 +25,13 @@ export default class instructor extends Component{
                       <li className="nav-item">
                           <Link to="/view-inst" className="nav-link" >View all Instructors</Link>
                       </li>
-                      <li className="nav-item">
-                          <Link to="/view-course" className="nav-link" >View all Courses</Link>
-                      </li>
+
 
 
                   </ul><br/>
 
                   <Route path="/add-inst" exact component={Add_Instru}/>
                   <Route path="/view-inst" exact component={View_Instru}/>
-                  <Route path="/view-course" exact component={View_Course}/>
 
 
 

@@ -14,7 +14,7 @@ const element=<h1 align="center" className="heading"><b>{name}</b></h1>;
         <h1>{element}</h1> <br/>
          <Switch>
             <Route exact path="/admin_header" component={AdminHeader}/>
-        <Route exact path="/" component={Header}/>
+        <Route exact path="/a" component={Header}/>
          </Switch>
         </Router>
     </div>,document.getElementById('app'));

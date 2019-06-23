@@ -12,7 +12,7 @@ const Instructor = props =>(
             <Link to={"/instructor-edit/"+props.instructor.instructorID}>Edit</Link>
         </td>
         <td>
-            <Link to={"/instructor-edit/"+props.instructor.instructorID}>Delete</Link>
+            <Link to={"/inst-delete/"+props.instructor.instructorID}>Delete</Link>
         </td>
 
         {/*<td>*/}

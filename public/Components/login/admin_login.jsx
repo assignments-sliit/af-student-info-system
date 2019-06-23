@@ -65,6 +65,7 @@ export default class admin_login extends  Component{
                     if (res.status===200){
                         alert('Login Success! Welcome, ' +this.state.adminID);
                         this.props.history.push('/admin_header');
+
                     } else{
                         alert('Login Failed! Please try again!' );
                     }

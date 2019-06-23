@@ -2,7 +2,7 @@ import React,{Component}from'react';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import addCourse from "./course_admin";
 import Student_updata from "../Student/update_student";
-import View_Course from "../instructor/ViewCourseIns";
+import View_Course from "./view_course_admin";
 import Add_Exam from "../instructor/AddExam";
 import View_Exam from "../instructor/ViewExamIns";
 
