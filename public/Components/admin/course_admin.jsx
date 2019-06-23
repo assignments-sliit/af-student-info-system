@@ -76,6 +76,12 @@ export default class course_admin extends Component{
            courseType:this.state.courseType,
            instructor:this.state.instructor
        }
+
+       axios.post('http://localhost:5000/api/courses/add-course',Course)
+           .then(res => console.log(res.data))
+           .catch(err => this.setState({ errors: err.response.data}));
+
+       alert('Course Insert Successfully');
     }
 
 
