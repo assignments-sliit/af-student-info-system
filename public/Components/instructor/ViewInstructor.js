@@ -9,8 +9,12 @@ const Instructor = props =>(
         <td>{props.instructor.name}</td>
         <td>{props.instructor.email}</td>
         <td>
-            <Link to={"/instructor-edit/"+props.instructor.instructorID}>edit</Link>
+            <Link to={"/instructor-edit/"+props.instructor.instructorID}>Edit</Link>
         </td>
+        <td>
+            <Link to={"/instructor-edit/"+props.instructor.instructorID}>Delete</Link>
+        </td>
+
         {/*<td>*/}
             {/*<Link color="danger" onClick={this.onDelete}>Delete</Link>*/}
             {/*<Button color="danger" onClick={()=>{*/}
