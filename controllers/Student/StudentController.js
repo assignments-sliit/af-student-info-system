@@ -135,22 +135,18 @@ exports.getAllStudents=(req,res,next)=>{
 
 //DELETE - usingStudentID
 exports.delete_byStudentID = (req,res,next)=>{
-    const stuID = req.params.studentID;
-
-    StudentModel.remove({
-        studentID:stuID
-    }).exec().then(result=>{
+    StudentModel.findByIdAndDelete(req.params.studentID).exec().then(result=>{
         res.status(200).json({
             message: 'Successfully deleted!!',
             deletedStuRecord: result
         });
     }).catch(err=>{
         console.log(err.message);
-
         res.status(500).json({
             error:err
         });
-    })
+    });
+
 };
 
 
@@ -203,7 +199,7 @@ exports.student_signIn=(req,res,next)=>{
 
 
 exports.student_enroll=(req,res,next)=>{
-    const id=req.params.id;
+    const id=req.body.id;
 
     const enrollment={
         enrolledCourse: req.params.enrolledCourse
