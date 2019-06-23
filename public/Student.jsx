@@ -5,6 +5,7 @@ export default class Student extends Component{
     constructor(props){
         super(props);
 
+        this.handleSubmit()
         this.state = {
             message: '',
             students: []
@@ -59,7 +60,6 @@ export default class Student extends Component{
         })
     }
 
-    handleOnChange(e){}
 
     render() {
         return (
