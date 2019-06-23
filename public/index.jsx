@@ -10,9 +10,11 @@ const name='Student Information System';
 const element=<h1 align="center" className="heading"><b>{name}</b></h1>;
 
     render(<div>
-        <h1>{element}</h1> <br/>
         <Router>
-        <Header/>
-         <Route path="/admin_header" component={AdminHeader}/>
+        <h1>{element}</h1> <br/>
+
+
+        <Route exact path="/" component={Header}/>
+        <Route path="/admin_header" component={AdminHeader}/>
         </Router>
     </div>,document.getElementById('app'));

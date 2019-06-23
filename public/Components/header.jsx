@@ -14,6 +14,7 @@ import Login from"./login/login";
 import Admin_login from './login/admin_login';
 import Instr_login from './login/instr_login';
 import AddStd from './Student/AddStudent';
+import AdminHeader from "./admin/admin_header";
 //import InstructorHeader from './instructor/InstructorHeader';
 //<Route path="/Instructor_Header" component={InstructorHeader}/>
 {/*<li className="nav-item">*/}
@@ -67,7 +68,6 @@ export default  class header extends Component{
                     <Route path="/admin-login" component={Admin_login}/>
                     <Route path="/inst-login" component={Instr_login}/>
                     <Route path="/student_register" component={AddStd}/>
-
 
 
 

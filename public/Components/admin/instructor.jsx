@@ -28,12 +28,6 @@ export default class instructor extends Component{
                       <li className="nav-item">
                           <Link to="/view-course" className="nav-link" >View all Courses</Link>
                       </li>
-                      <li className="nav-item">
-                          <Link to="/add-exam" className="nav-link" >Create an Exam</Link>
-                      </li>
-                      <li className="nav-item">
-                          <Link to="/view-exam" className="nav-link" >View all Exams</Link>
-                      </li>
 
 
                   </ul><br/>
@@ -41,8 +35,8 @@ export default class instructor extends Component{
                   <Route path="/add-inst" exact component={Add_Instru}/>
                   <Route path="/view-inst" exact component={View_Instru}/>
                   <Route path="/view-course" exact component={View_Course}/>
-                  <Route path="/add-exam" exact component={Add_Exam}/>
-                  <Route path="/view-exam" exact component={View_Exam}/>
+
+
 
 
               </Router>
