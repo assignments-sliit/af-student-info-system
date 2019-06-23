@@ -86,7 +86,7 @@ export default class update_admin extends Component{
                             <div className="col-md-6">
                                 <input type="text"
                                        className="form-control"
-                                       placeholder="Admin Id"
+                                       placeholder="Admin ID"
                                        value={this.state.adminID}
                                        onChange={this.onChangeID}
                                        disabled
@@ -127,7 +127,7 @@ export default class update_admin extends Component{
                             </div>
                         </div><br/>
 
-                        <button type="submit" className="btn btn-success">UPDATE</button>
+                        <button type="submit" className="btn btn-success">Update Details</button>
 
                     </form>
 

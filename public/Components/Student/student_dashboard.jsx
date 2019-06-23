@@ -11,7 +11,7 @@ export default class student_dashboard extends Component{
     render() {
         return(
           <div>
-              <h2 align="center">STUDENT'S </h2> <br/>
+              <h2 align="center">STUDENTS </h2> <br/>
               <Router>
                   <ul className="nav nav-tabs">
                       <li className="nav-item">

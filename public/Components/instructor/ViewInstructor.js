@@ -71,7 +71,7 @@ export  default class ViewInstructor extends Component{
                         <th>Instructor ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Action's</th>
+                        <th>Actions</th>
                         <th>Delete</th>
                     </tr>
                     </thead>

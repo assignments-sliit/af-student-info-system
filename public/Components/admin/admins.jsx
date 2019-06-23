@@ -13,14 +13,14 @@ export default class admins extends Component{
     render() {
         return(
           <div>
-              <h2 align="center">ADMIN'S</h2> <br/>
+              <h2 align="center">ADMINS</h2> <br/>
               <Router>
               <ul className="nav nav-tabs">
                   <li className="nav-item">
-                      <Link to="/" className="nav-link active">Add</Link>
+                      <Link to="/" className="nav-link active">Add Admin</Link>
                   </li>
                   <li className="nav-item">
-                      <Link to="/adminview" className="nav-link" >View's</Link>
+                      <Link to="/adminview" className="nav-link" >View Admins</Link>
                   </li>
 
 

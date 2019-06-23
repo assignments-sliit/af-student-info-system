@@ -9,11 +9,11 @@ export default class students extends Component{
     render() {
         return(
           <div>
-              <h2 align="center">STUDENT'S</h2> <br/>
+              <h2 align="center">STUDENTS</h2> <br/>
               <Router>
                   <ul className="nav nav-tabs">
                       <li className="nav-item">
-                          <Link to="/a" className="nav-link active">View</Link>
+                          <Link to="/a" className="nav-link active">View Students</Link>
                       </li>
 
 

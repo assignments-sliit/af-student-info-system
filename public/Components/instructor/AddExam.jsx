@@ -81,7 +81,7 @@ export default class AddExam extends Component{
                         <div className="col-md-6">
                             <input type="text"
                                    className="form-control"
-                                   placeholder="Exam Id"
+                                   placeholder="Exam ID"
                                    value={this.state.examID}
                                    onChange={this.onChangeID}
                             />
@@ -119,7 +119,7 @@ export default class AddExam extends Component{
                         </div>
                     </div><br/>
 
-                    <button type="submit" className="btn btn-success">ADD</button>
+                    <button type="submit" className="btn btn-success">Add Exam</button>
 
                 </form>
             </div>

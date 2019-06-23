@@ -9,7 +9,7 @@ export default class fileUpload extends Component{
               <h2 align="center">Assigment</h2><br/>
               <form>
               <div class="form-group">
-                  <label for="exampleFormControlFile1">Example file input</label>
+                  <label for="exampleFormControlFile1">Upload Files (Max 10MB)</label>
                   <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
               </div>
           </form>

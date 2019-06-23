@@ -62,7 +62,7 @@ export default class AddStudent extends Component{
                                     </div>
                                     <br/><br/>
                                     <div className='form-group'>
-                                        <button type='submit' className='btn btn-success form-control'>Add</button>
+                                        <button type='submit' className='btn btn-success form-control'>Add Student</button>
                                         <br/><br/>
                                         <button type='reset' className='btn btn-danger form-control'>Cancel</button>
                                     </div>

@@ -48,14 +48,14 @@ export  default class view_exams extends Component{
     render() {
         return(
             <div>
-                <h3 align="center">View Exams</h3>
+                <h3 align="center">View all Exams</h3>
                 <table className="table table-striped" style={{marginTop:20}}>
                     <thead>
                     <tr>
                         <th>Exam ID</th>
                         <th>Module Name</th>
                         <th>Exam date</th>
-                        <th>Action's</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

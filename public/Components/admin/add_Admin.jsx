@@ -75,13 +75,13 @@ export default class add_Admin extends Component{
     render() {
         return(
           <div>
-              <h2 align="center">ADD Admin</h2> <br/>
+              <h2 align="center">Add an Admin</h2> <br/>
               <form onSubmit={this.onSubmit}>
                   <div className="row">
                       <div className="col-md-6">
                           <input type="text"
                                  className="form-control"
-                                 placeholder="Admin Id"
+                                 placeholder="Admin ID"
                                  value={this.state.adminID}
                                  onChange={this.onChangeID}
                           />
@@ -91,7 +91,7 @@ export default class add_Admin extends Component{
                       <div className="col-md-6">
                           <input type="text"
                                  className="form-control"
-                                 placeholder="Name"
+                                 placeholder="Admin Name"
                                  value={this.state.name}
                                  onChange={this.onChangeName}
                           />
@@ -103,7 +103,7 @@ export default class add_Admin extends Component{
                           <input type="email"
                                  className="form-control"
                                  id="inputEmail4"
-                                 placeholder="Email"
+                                 placeholder="Email Address"
                                  value={this.state.email}
                                  onChange={this.onChangeEmail}
                           />
@@ -121,7 +121,7 @@ export default class add_Admin extends Component{
                       </div>
                   </div><br/>
 
-                  <button type="submit" className="btn btn-success">ADD</button>
+                  <button type="submit" className="btn btn-success">Add Admin</button>
 
               </form>
           </div>

@@ -91,7 +91,7 @@ export default class update_student extends Component{
                          <div className="col-md-6">
                              <input type="text"
                                     className="form-control"
-                                    placeholder="Student Id"
+                                    placeholder="Student ID"
                                     value={this.state.studentID}
                                     onChange={this.onChangeID}
                                     disabled

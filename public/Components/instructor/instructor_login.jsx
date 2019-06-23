@@ -60,8 +60,11 @@ export default class admin_login extends  Component{
         }else {
             axios.post('http://localhost:5000/api/instructors/login',new_instructor)
                 .then(res=> {
-                    console.log(res);
-                    this.props.history.push('/instructor_dashboard')
+                    if(res.status===200){
+                        //success page
+                    }else{
+                        //failure page
+                    }
                 });
         }
     }

@@ -60,8 +60,12 @@ export default class admin_login extends  Component{
         }else {
             axios.post('http://localhost:5000/api/admins/login',new_admin)
                 .then(res=> {
-                    console.log(res);
-                    this.props.history.push('/admin_dashboard')
+                    if (res.status===200){
+                        alert('Login Success! Welcome, ' +this.state.adminID);
+                    } else{
+                        alert('Login Failed! Please try again!' );
+                    }
+
                 });
         }
 

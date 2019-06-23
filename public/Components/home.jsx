@@ -25,7 +25,7 @@ export default class home extends Component{
                         <div className="card">
                             <div className="card-body">
 
-                                <Link to={'/inst-login'} className="btn btn-primary">INSTRUCTORS LOGIN</Link>
+                                <Link to={'/inst-login'} className="btn btn-primary">Instructor Login</Link>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ export default class home extends Component{
                         <div className="card">
                             <div className="card-body">
 
-                                <Link to={'/admin-login'} className="btn btn-primary">ADMIN LOGIN</Link>
+                                <Link to={'/admin-login'} className="btn btn-primary">Admin Login</Link>
                             </div>
                         </div>
                     </div>

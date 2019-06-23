@@ -56,7 +56,7 @@ export  default class ViewCourseIns extends Component{
                         <th>Course Name</th>
                         <th>Course Type</th>
                         <th>Module</th>
-                        <th>Action's</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

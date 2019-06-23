@@ -5,16 +5,8 @@ import Header from './Components/admin/admin_header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-//import App from './App';
-
-//render(<App/>,document.getElementById('app'));
-
-const name='Students Information Systems';
+const name='Student Information System';
 const element=<h1 align="center" className="heading"><b>{name}</b></h1>;
-
-
-
 
     render(<div>
         <h1>{element}</h1> <br/>

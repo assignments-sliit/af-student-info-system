@@ -16,7 +16,7 @@ export default class course extends Component{
                   <Router>
                       <ul className="nav nav-tabs">
                           <li className="nav-item">
-                              <Link to="/" className="nav-link active">Add Course</Link>
+                              <Link to="/" className="nav-link active">Add a Course</Link>
                           </li>
                           <li className="nav-item">
                               <Link to="/view-course" className="nav-link" >View Courses</Link>

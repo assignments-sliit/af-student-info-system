@@ -130,7 +130,7 @@ export default class course_admin extends Component{
                   </div>
 
 
-                  <button type="submit" className="btn btn-success">ADD</button>
+                  <button type="submit" className="btn btn-success">Add Course</button>
 
               </form>
           </div>

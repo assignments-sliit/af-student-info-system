@@ -83,7 +83,7 @@ export default class students_admin extends Component{
                             <div className="col-md-6">
                                 <input type="text"
                                        className="form-control"
-                                       placeholder="Student Id"
+                                       placeholder="Student ID"
                                        value={this.state.studentID}
                                        onChange={this.onChangeStd}
                                 />
@@ -93,7 +93,7 @@ export default class students_admin extends Component{
                             <div className="col-md-6">
                                 <input type="text"
                                        className="form-control"
-                                       placeholder="Name"
+                                       placeholder="Student Name"
                                        value={this.state.name}
                                        onChange={this.onChangeName}
                                 />
@@ -123,7 +123,7 @@ export default class students_admin extends Component{
                             </div>
                             </div><br/>
 
-                        <button type="submit" className="btn btn-success">ADD</button>
+                        <button type="submit" className="btn btn-success">Add Students</button>
 
                     </form>
                 </div>

@@ -53,7 +53,7 @@ exports.addInstructor=(req,res,next)=>{
                             });
 
                             const mailOptions={
-                                from:'',
+                                from:'noreply@eventors4.herokuapp.com',
                                 to:instructor.email,
                                 subject:'Welcome '+ instructor.name +' to Student Information System!',
                                 html:'Hi! '+instructor.name +', <br/> '+ 'Welcome to Student Information System. We warmly welcome our instructor!<br/> Thanks and Best Regards,<br/>Admin'

@@ -20,19 +20,19 @@ export default class instructor extends Component{
               <Router>
                   <ul className="nav nav-tabs">
                       <li className="nav-item">
-                          <Link to="/add-inst" className="nav-link active">Add Instructors</Link>
+                          <Link to="/add-inst" className="nav-link active">Add an Instructor</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/view-inst" className="nav-link" >View Instructors</Link>
+                          <Link to="/view-inst" className="nav-link" >View all Instructors</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/view-course" className="nav-link" >View Courses</Link>
+                          <Link to="/view-course" className="nav-link" >View all Courses</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/add-exam" className="nav-link" >Create Exam</Link>
+                          <Link to="/add-exam" className="nav-link" >Create an Exam</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/view-exam" className="nav-link" >View Exams</Link>
+                          <Link to="/view-exam" className="nav-link" >View all Exams</Link>
                       </li>
 
 

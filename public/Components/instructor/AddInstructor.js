@@ -81,7 +81,7 @@ export default class AddInstructor extends Component{
                         <div className="col-md-6">
                             <input type="text"
                                    className="form-control"
-                                   placeholder="Instructor Id"
+                                   placeholder="Instructor ID"
                                    value={this.state.instructorID}
                                    onChange={this.onChangeID}
                             />
@@ -121,7 +121,7 @@ export default class AddInstructor extends Component{
                         </div>
                     </div><br/>
 
-                    <button type="submit" className="btn btn-success">ADD</button>
+                    <button type="submit" className="btn btn-success">Add Instructor</button>
 
                 </form>
             </div>

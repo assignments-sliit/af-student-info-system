@@ -84,7 +84,7 @@ export default class update_instructor extends Component{
                         <div className="col-md-6">
                             <input type="text"
                                    className="form-control"
-                                   placeholder="Instructor Id"
+                                   placeholder="Instructor ID"
                                    value={this.state.instructorID}
                                    onChange={this.onChangeID}
                                    disabled
@@ -125,7 +125,7 @@ export default class update_instructor extends Component{
                         </div>
                     </div><br/>
 
-                    <button type="submit" className="btn btn-success">UPDATE</button>
+                    <button type="submit" className="btn btn-success">Update Details</button>
 
                 </form>
 

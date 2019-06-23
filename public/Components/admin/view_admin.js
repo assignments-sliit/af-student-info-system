@@ -49,14 +49,14 @@ export  default class view_admins extends Component{
     render() {
         return(
             <div>
-                <h3 align="center">View admin</h3>
+                <h3 align="center">View Admins</h3>
                 <table className="table table-striped" style={{marginTop:20}}>
                     <thead>
                     <tr>
                         <th>Admin ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Action's</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

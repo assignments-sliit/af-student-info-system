@@ -51,7 +51,7 @@ export default class ViewStudent extends Component{
                         <th>Student ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Action's</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

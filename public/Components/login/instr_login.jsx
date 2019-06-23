@@ -8,7 +8,7 @@ export default class instr_login extends Component {
     render(){
         return(
           <div>
-              <h2 align="center">instr login</h2>
+              <h2 align="center">Instructor login</h2>
               <div>
                   <form>
                       <div className="form-group col-7">
@@ -25,7 +25,7 @@ export default class instr_login extends Component {
                                  placeholder="Password"/>
                       </div>
 
-                      <button type="submit" className="btn btn-primary">Submit</button>
+                      <button type="submit" className="btn btn-primary">Login</button>
                   </form>
               </div>
           </div>
