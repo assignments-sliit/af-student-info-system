@@ -3,6 +3,8 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 const keys=require('../../../config/keys');
 const JWT_KEY=keys.JWT_KEY;
+
+
 export default class admin_login extends  Component{
 
 
@@ -62,6 +64,7 @@ export default class admin_login extends  Component{
                 .then(res=> {
                     if (res.status===200){
                         alert('Login Success! Welcome, ' +this.state.adminID);
+                        this.props.history.push('/admin_header')
                     } else{
                         alert('Login Failed! Please try again!' );
                     }
@@ -98,6 +101,7 @@ export default class admin_login extends  Component{
                       <button type="submit" className="btn btn-primary">Login</button>
                   </form>
               </div>
+
 
 
           </div>

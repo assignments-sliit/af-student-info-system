@@ -4,7 +4,6 @@ import exam from './instructor/AddExam';
 import addStd from './Student/AddStudent';
 import Home from './home';
 import Std_dashboard from './Student/student_dashboard';
-
 import AAdmin from'./admin/admins';
 import {BrowserRouter as Router,Route,Link} from "react-router-dom";
 import '../css.css'
