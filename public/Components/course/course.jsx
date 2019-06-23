@@ -7,7 +7,6 @@ export default  class course extends Component{
         return(
             <div>
             <h1 align="center">Course</h1>
-
             </div>
         )
     }

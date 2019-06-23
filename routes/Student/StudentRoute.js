@@ -10,10 +10,12 @@ const StudentController = require('../../controllers/Student/StudentController')
 route.post('/add-student',StudentController.students_signup);
 
 //GET - for particular student
-route.get('/get-student/:studentID',checkAuth, StudentController.get_studentById);
+route.get('/get-student/:studentID', StudentController.get_studentById);
+
+route.put('/update-student/:studentID',StudentController.admin_update)
 
 //GET_ALL
-//route.get('/get-all', StudentController.getAllStudents);
+route.get('/get-all', StudentController.getAllStudents);
 
 //DELETE
 route.delete('/delete-student/:studentID',checkAuth, StudentController.delete_byStudentID);

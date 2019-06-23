@@ -29,13 +29,13 @@ export default class adminpage1 extends Component{
                       <div className="card">
                           <img src={Students} className="card-img-top" alt="..."/>
                               <div className="card-body" align="center">
-                                  <Link to="/std"  className="btn btn-primary">Students</Link>
+                                  <Link to="/admin/student"  className="btn btn-primary">Students</Link>
                               </div>
                       </div>
                       <div className="card">
                           <img src={Lecture} className="card-img-top" alt="..."/>
                               <div className="card-body" align="center">
-                                  <Link to="/instructor"  className="btn btn-primary">Instructors</Link>
+                                  <Link to="/admin/instructor"  className="btn btn-primary">Instructors</Link>
                               </div>
                       </div>
                   </div> <br/><br/>
@@ -43,14 +43,14 @@ export default class adminpage1 extends Component{
                       <div className="card">
                           <img src={Course} className="card-img-top" alt="..."/>
                               <div className="card-body" align="center">
-                                  <Link to="/course" className="btn btn-primary">Course</Link>
+                                  <Link to="/admin/course" className="btn btn-primary">Course</Link>
                               </div>
                       </div>
 
                       <div className="card">
                           <img src={Admin} className="card-img-top" alt="..."/>
                           <div className="card-body" align="center">
-                              <Link to="/admin-01" className="btn btn-primary">Admins</Link>
+                              <Link to="/admin/admins" className="btn btn-primary">Admins</Link>
                           </div>
 
                       </div>

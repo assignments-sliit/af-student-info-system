@@ -55,6 +55,7 @@ export default class update_admin extends Component{
         axios.put('http://localhost:5000/api/admins/update/'+this.props.match.params.id,new_admin)
             .then(res => console.log(res.data));
 
+        alert('Admin Update successfully');
 
     }
 
