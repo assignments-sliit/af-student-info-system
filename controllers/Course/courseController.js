@@ -69,6 +69,27 @@ exports.findCourseByCode=(req,res,next)=>{
   });
 };
 
+exports.findCourseByAcceptance=(req,res,next)=>{
+    Course.find({
+        accepted:req.params.code
+    }).exec().then(result=>{
+        if(result.length>=1){
+            res.status(200).json({
+                course:result
+            });
+
+        }else{
+            res.status(404).json({
+                message:'Nothing was found here!'
+            });
+        }
+    }).catch(err=>{
+        res.status(500).json({
+            error:err
+        });
+    });
+};
+
 
 exports.deleteCourseByCode=(req,res,next)=>{
   const code=req.param.courseCode;

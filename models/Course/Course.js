@@ -14,6 +14,9 @@ const CourseSchema=mongoose.Schema({
     courseType:{
        type:String
     },
+    accepted:{
+        type:Boolean
+    },
     module:[
        {
         type:mongoose.Schema.Types.ObjectId,
