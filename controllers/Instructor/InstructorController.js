@@ -116,7 +116,7 @@ exports.deleteInstructorByCode=(req,res,next)=>{
             else
                 res.status(200).json('Successfully removed')
     })
-};
+};//
 
 
 //instructorLogin
