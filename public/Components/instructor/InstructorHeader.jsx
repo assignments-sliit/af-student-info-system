@@ -20,12 +20,12 @@ export default class instructor_dashboard extends Component{
                 <h2 align="center">INSTRUCTOR</h2> <br/>
                 <Router>
                     <ul className="nav nav-tabs">
-                        <li className="nav-item">
-                            <Link to="/addIns" className="nav-link active">Add Instructor</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/view_inst" className="nav-link active">View Instructor</Link>
-                        </li>
+                        {/*<li className="nav-item">*/}
+                            {/*<Link to="/addIns" className="nav-link active">Add Instructor</Link>*/}
+                        {/*</li>*/}
+                        {/*<li className="nav-item">*/}
+                            {/*<Link to="/view_inst" className="nav-link active">View Instructor</Link>*/}
+                        {/*</li>*/}
                         <li className="nav-item">
                             <Link to="/viewCourse" className="nav-link active">View Course</Link>
                         </li>
