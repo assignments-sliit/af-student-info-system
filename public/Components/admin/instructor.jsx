@@ -6,8 +6,8 @@ import View_Course from "../instructor/ViewCourseIns";
 import Add_Exam from "../instructor/AddExam";
 import View_Exam from "../instructor/ViewExamIns";
 import Edit_admin from "./update_admin";
-import Edit_instructor from "../instructor/UpdateInstructor";
-
+//import Edit_instructor from "../instructor/UpdateInstructor";
+//<Route path="/instructor-edit/:id" component={Edit_instructor}/>
 
 
 export default class instructor extends Component{
@@ -43,7 +43,7 @@ export default class instructor extends Component{
                   <Route path="/view-course" exact component={View_Course}/>
                   <Route path="/add-exam" exact component={Add_Exam}/>
                   <Route path="/view-exam" exact component={View_Exam}/>
-                  <Route path="/instructor-edit/:id" component={Edit_instructor}/>
+
 
               </Router>
               <br/><br/>
