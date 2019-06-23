@@ -2,6 +2,7 @@ const port=process.env.PORT || 5000;
 const Bundler=require('parcel-bundler');
 const express=require('express');
 const app =express();
+const cors=require('cors');
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 const courseRouter=require('./routes/Course/courseRoutes');
@@ -14,10 +15,12 @@ const assignmentRouters=require('./routes/Course/assignmentRoute');
 const bundler=new Bundler('./public/index.html',{});
 let db;
 
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.use((req, res, next) => {
+app.use(cors());
+app.all((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
         "Access-Control-Allow-Headers",

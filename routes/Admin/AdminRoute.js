@@ -9,7 +9,8 @@ route.post('/add', AdminController.addAdmin);
 //GET - for particular student
 route.get('/get/:adminID', AdminController.findAdminByCode);
 
-//UPDATE
+//LOGIN
+route.post('/login',AdminController.admin_signIn);
 
 
 //GET_ALL

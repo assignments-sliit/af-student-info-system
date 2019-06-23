@@ -15,9 +15,11 @@ import Login from"./login/login";
 import Admin_login from './login/admin_login';
 import Instr_login from './login/instr_login';
 import AddStd from './Student/AddStudent';
-import InstructorHeader from './instructor/InstructorHeader';
-
-
+//import InstructorHeader from './instructor/InstructorHeader';
+//<Route path="/Instructor_Header" component={InstructorHeader}/>
+{/*<li className="nav-item">*/}
+{/*    <Link to="/Instructor_Header"><b className="nav-link">Instructor</b></Link>*/}
+{/*</li>*/}
 
 
 export default  class header extends Component{
@@ -42,9 +44,7 @@ export default  class header extends Component{
                             <li className="nav-item">
                                 <Link to="/course"><b className="nav-link">Course</b></Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/Instructor_Header"><b className="nav-link">Instructor</b></Link>
-                            </li>
+
 
                         </ul>
 
@@ -59,16 +59,16 @@ export default  class header extends Component{
                 </div>
                     <Route path="/" exact component={Home}/>
                     <Route path="/exam" component={exam}/>
-                    <Route path="/admin-01" component={AAdmin}/>
-                    <Route path="/std" component={Adminstudent}/>
-                    <Route path="/course" component={Std_dashboard}/>
+
+
+
                     <Route path="/login" component={Login}/>
-                    <Route path="/instructor" component={Add_Instructor}/>
+
                     <Route path="/addstd" component={addStd}/>
                     <Route path="/admin-login" component={Admin_login}/>
                     <Route path="/inst-login" component={Instr_login}/>
                     <Route path="/student_register" component={AddStd}/>
-                    <Route path="/Instructor_Header" component={InstructorHeader}/>
+
 
 
 

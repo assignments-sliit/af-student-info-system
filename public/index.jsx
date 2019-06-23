@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom' ;
-import Header from './Components/header';
+import Header from './Components/admin/admin_header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

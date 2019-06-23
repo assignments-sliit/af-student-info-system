@@ -1,6 +1,8 @@
 const Admin=require('../../models/Admin/Admin');
 const mongoose=require('mongoose');
-
+const jwt=require('jsonwebtoken');
+const keys=require('../../config/keys');
+const JWT_KEY=keys.JWT_KEY;
 
 exports.getAllAdmin=(req,res,next)=>{
     Admin.find(function (err,id) {
@@ -98,6 +100,47 @@ exports.deleteAdminByCode=(req,res,next)=>{
 
         else
             res.status(200).json('Successfully removed'+admin.name)
+    })
+};
+
+
+//login
+exports.admin_signIn=(req,res,next)=>{
+    Admin.find({adminID:req.body.adminID})
+        .exec()
+        .then(admin=>{
+            if(admin.length<1){
+                return res.status(401).json({
+                    message:'Authorization Failed!'
+                });
+            }
+            if(admin){
+               //correct password
+                const token=jwt.sign({
+                       id:admin[0]._id,
+                       adminID:admin[0].adminID,
+                       userType:admin[0].userType
+
+                },
+                JWT_KEY,
+                {
+                     expiresIn: "1h"
+                }
+                );
+                console.log(admin);
+                 return res.status(200).json({
+                    message:'Authorization Success',
+                    token:token
+                 });
+            }
+            res.status(401).json({
+                message:'Authorization Failed!'
+            });
+        }).catch(err=>{
+        console.log(err);
+        res.status(500).json({
+            error:err
+        });
     })
 };
 

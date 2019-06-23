@@ -7,6 +7,7 @@ const Student = props => (
         <td>{props.student.studentID}</td>
         <td>{props.student.name}</td>
         <td>{props.student.email}</td>
+        <td><Link to={"/student-edit/"+props.student.studentID}>edit</Link></td>
     </tr>
 );
 
@@ -25,7 +26,8 @@ export default class ViewStudent extends Component{
         axios.get('api/students/get-all')
             .then(response => {
                 this.setState({
-                    students: response.data
+                    students: response.data,
+
                 })
             }).catch(function (error) {
                     console.log(error);
@@ -39,6 +41,7 @@ export default class ViewStudent extends Component{
     }
 
     render(){
+        console.log(this.state);
         return(
             <div>
                 <h3 align="center">View Student</h3>
@@ -48,6 +51,7 @@ export default class ViewStudent extends Component{
                         <th>Student ID</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Action's</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -77,6 +77,25 @@ exports.get_studentById= (req,res,next)=>{
     });
 };
 
+exports.admin_update=(req,res,next)=>{
+    const id=req.params.studentID;
+
+    const updatedStudent={
+        name:req.body.name,
+        email:req.body.email,
+        password: req.body.password,
+    };
+    StudentModel.update({studentID:id},updatedStudent)
+        .exec().then(result=>{
+        res.send(result);
+        alert('add done')
+    }).catch(err=>{
+        res.status(500).json({
+            message:'Error update failed!',
+            error:err
+        })
+    });
+};
 
 //GET - All Students
 /*exports.getAllStudents=(req,res,next)=>{

@@ -4,6 +4,7 @@ import Add_Admin from './add_Admin';
 import View_Admin from './view_admin';
 import ViewInstructor from '../instructor/ViewInstructor';
 import Edit_admin from "./update_admin";
+import AddCourse from "./course_admin";
 
 export default class admins extends Component{
 
@@ -16,21 +17,19 @@ export default class admins extends Component{
               <Router>
               <ul className="nav nav-tabs">
                   <li className="nav-item">
-                      <Link to="/add-admin" className="nav-link active">Add</Link>
+                      <Link to="/" className="nav-link active">Add</Link>
                   </li>
                   <li className="nav-item">
                       <Link to="/adminview" className="nav-link" >View's</Link>
                   </li>
-                  <li className="nav-item">
-                      <Link to="/instructorview" className="nav-link" >View Instructors</Link>
-                  </li>
+
 
               </ul><br/>
 
-                  <Route path="/add-admin" exact component={Add_Admin}/>
+                  <Route path="/" exact component={Add_Admin}/>
                   <Route path="/adminview" component={View_Admin}/>
-                  <Route path="/instructorview" component={ViewInstructor}/>
                   <Route path="/admin-edit/:id" component={Edit_admin}/>
+                  <Route path="/admin/course/add" component={AddCourse}/>
               </Router>
               <br/><br/>
           </div>
