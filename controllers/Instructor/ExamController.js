@@ -100,20 +100,48 @@ exports.findExamByCode=(req,res,next)=>{
     });
 };
 
+// exports.deleteExamByCode=(req,res,next)=>{
+//     const code=req.param.examID;
+//     Exam.remove({
+//         examID:code
+//     }).exec()
+//         .then(result=>{
+//             res.status(200).json({
+//                 message:'deleted',
+//                 deletedExam:result
+//             });
+//         }).catch(err=>{
+//         console.log(err.message);
+//         res.status(500).json({
+//             error:err
+//         });
+//     })
+// };
 exports.deleteExamByCode=(req,res,next)=>{
-    const code=req.param.examID;
-    Exam.remove({
-        examID:code
-    }).exec()
-        .then(result=>{
-            res.status(200).json({
-                message:'deleted',
-                deletedExam:result
-            });
-        }).catch(err=>{
-        console.log(err.message);
-        res.status(500).json({
-            error:err
-        });
+
+    Exam.remove({examID:req.params.examID},function (err,exam) {
+        if(err)
+            res.status(400).json(err);
+
+        else
+            res.status(200).json('Successfully removed')
     })
+};
+exports.exam_update=(req,res,next)=>{
+    const id=req.params.examID;
+
+    const updatedExam={
+        moduleCode:req.body.moduleCode,
+        moduleName:req.body.moduleName,
+        examDay: req.body.examDay,
+    };
+    Exam.update({examID:id},updatedExam)
+        .exec().then(result=>{
+        res.send(result);
+    }).catch(err=>{
+        res.status(500).json({
+            message:'Error update failed!',
+            error:err
+        })
+    });
 };
