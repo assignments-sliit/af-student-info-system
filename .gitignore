@@ -62,3 +62,8 @@ typings/
 
 #file uploads
 uploads/*
+
+#by user
+package-lock.json
+.cache
+dist

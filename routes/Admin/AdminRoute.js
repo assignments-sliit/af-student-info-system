@@ -8,7 +8,7 @@ const checkAuth=require('../../auth/checkAuthAdmin');
 route.post('/add', AdminController.addAdmin);
 
 //GET - for particular student
-route.get('/get/:adminID', AdminController.findAdminByCode);
+route.get('/get/:adminId', AdminController.findAdminByCode);
 
 //LOGIN
 route.post('/login',AdminController.admin_signIn);
